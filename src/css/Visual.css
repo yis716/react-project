@@ -1,0 +1,93 @@
+/*
+.visual .swiper-container {height: 100%;width: 100%;}
+.visual .swiper-container .swiper-slide {}
+*/
+
+.visual{width: 100%; position: relative; }
+.visual .visualInner .visualInfo{position: absolute; top: 50%; left: 50%; transform: translate(-50%); color:#fff; 
+  text-align: center; z-index: 10;}
+.visual .visualInner .visualInfo p:nth-of-type(1){font-size: 1.2vw; margin-bottom: 10px;}
+.visual .visualInner .visualInfo p:nth-of-type(2){font-size: 3.3vw;}
+
+
+.visual .visualInner .swiper{height: 100%;width: 100%;}
+
+.visual .swiper-slide {
+  
+    background: #fff; 
+
+    height: 100%; width: 100%;
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+  }
+  
+
+.visual .visualInner .swiper-slide img{
+ 
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;}
+
+   
+
+.visual .swiper-container-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite{
+  width: 3px; 
+  height: 180px;
+/* border: 2px solid rgba(255, 255, 255, .1);  */
+position: absolute; left: 100px; top: 50%; transform: rotate(180deg) translateY(50%); 
+background: rgba(255, 255, 255, .5);
+
+}
+
+.visual .swiper-pagination .swiper-pagination-progressbar-fill {background: #82D2F4;}
+  
+.visual .swiper-button-prev, .visual .swiper-button-next{color: #fff; position: absolute;
+  }
+
+/* .visual .swiper-button-prev{top: 85%; left: 91%;}
+.visual .swiper-button-next{top: 85%; right: 5%;}
+.visual .swiper-button-prev:after, .visual .swiper-button-next:after {
+  --swiper-navigation-size: 20px;
+} */
+
+/* .visual .swiper-button-prev{top: 62%; left: 3.8%; }
+.visual .swiper-button-next{top: 62%; left: 5.4%; } */
+.visual .swiper-button-prev:after, .visual .swiper-button-next:after {
+  --swiper-navigation-size: 20px;
+}
+
+
+
+
+
+/* .visual .swiper-button-prev{
+  background: url() no-repeat;
+  background-size: 50% auto;
+  background-position: center;}
+
+.visual .swiper-button-next {
+  background: url() no-repeat;
+  background-size: 50% auto;
+  background-position: center;} */
+/* 
+.swiper-button-next::after, .swiper-button-prev::after {
+  display: none;
+} */
+
+
+
+  
+  @media screen and (max-width: 1024px) {
+    .visual .swiper-pagination{display: none;}
+    .visual .visualInner .visualInfo p:nth-of-type(1){font-size: 1.6vw; margin-bottom: 5px;}
+    
+    
+  }
+
+  @media screen and (max-width: 768px) {
+    .visual .swiper-container{height: 400px;}
+    .visual .visualInner .visualInfo p:nth-of-type(1){font-size: 1.8vw;}
+  }

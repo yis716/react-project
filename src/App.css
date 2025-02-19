@@ -1,0 +1,91 @@
+.App{width: 100%; overflow: hidden;;}
+
+
+header{width: 100%;  padding: 20px 0;
+     position: fixed;left: 0; top: 0; z-index: 200; background: #fff; transition: background .5s;}
+header h1{width: 180px; height: 70px; margin: 0 auto 30px auto;}
+nav ul{display: flex; justify-content: space-evenly;}
+nav{width: 98%; font-weight: 600; margin: 0 auto; font-family: "Roboto";box-sizing: border-box;}
+nav a{font-size: 1.3rem; display: block; text-decoration: none; margin: 0 15px;color: #333;}
+.active{color: #0568a5;}
+header button{position: absolute; right: 20px;top:30px; cursor: pointer;background: none; display: none;}
+header button .ico{ font-size: 2rem; }
+
+.ch h1{float: left; padding-left:50px; }
+.ch nav{padding-top: 25px; margin: 0;}
+.ch nav ul{padding-left: 250px;}
+
+
+
+
+
+footer{padding: 50px; background: #f3f3f3; }
+footer .F_top .dropup-center{position: relative; float: right; margin-right: 50px;}
+footer .F_top .dropup-center p{text-align: center; font-weight: 500; padding-top: 20px;}
+footer .F_top .dropup-center button{padding: 15px 20px; display: block;font-size: 1.1rem; 
+    border-radius: 15px; background: #999; color: #fff; 
+     border: 1px solid #ccc; cursor: pointer; transition: all .5s;}
+footer .F_top .dropup-center button span{font-size: 1.2rem;}
+footer .F_top .dropup-center ul{position: absolute;width: 100%;left:0; bottom:120px; text-align: center; 
+    background: #fff; border-radius: 15px;}
+footer .F_top .dropup-center ul li a{padding: 10px; font-size: 1rem; transition: all .5s;}
+footer .F_top .dropup-center ul li a:hover{background: #777; border-radius: 15px; color: #fff;}
+footer .F_top .dropup-center ul.show{display: block;}
+footer .F_top .dropup-center ul.hide{display: none;}
+
+
+
+footer .top_move{display: flex; width: 60px; height:60px;justify-content: center;align-items: center;
+    background: #57B7F2; color: #fff; font-size: 1rem; border-radius: 50%; position:fixed;
+    bottom: 80px; right: 30px; opacity: 0; transition: all .5s; z-index: 100;}
+
+
+footer .F_bottom ul{width: 100%; display: flex; gap: 20px; padding: 20px 0;}
+footer .F_bottom span{font-size: .8rem;}
+footer .top_move.up{ opacity: 0;}
+footer .top_move.down{opacity: 1;}
+footer .top_move.down:hover{ background :url(./images/sun.png);}
+footer .top_move.down:hover span{display: none;}
+
+
+
+@media screen and (max-width:1280px) {
+    .ch nav ul { padding-left: 100px;}
+    nav a {font-size: 1.2rem; }
+
+}
+
+
+
+@media screen and (max-width:1024px) {
+    header{height: 60px;}
+    header .header_inner{display: block;}
+    header .header_inner nav{width: 100%; background:skyblue ;position: absolute; left:0; top:100px; 
+       height: 0; overflow: hidden;  transition: all .5s; }
+    header .header_inner nav.show{height:500px;}
+    header .header_inner nav.hide{height: 0;}
+    header .header_inner nav ul{display:block;padding: 10px 0; }
+    header .header_inner nav ul li{width:100%; text-align: center;}
+    header .header_inner nav ul li a{padding: 10px 0; transition:all .5s ;}
+    header .header_inner nav ul li a:hover{background: #fff;}
+    header button{display: block;}
+    .ch nav{padding-top:0;}
+}
+
+@media screen and (max-width:800px) {
+    footer{padding: 30px;}
+    footer .F_top .dropup-center{margin-top: 20px; margin-right: 0;}
+    footer .F_top .dropup-center p{display: none;}
+    footer .F_top .dropup-center button{padding: 15px 30px;}
+    footer .F_bottom ul{flex-wrap: wrap; gap: 1%; text-align: center; padding: 20px;}
+    footer .F_bottom ul li{width: 49%;}
+    footer .F_bottom ul li a{padding: 10px;}
+    footer .F_top .dropup-center ul {bottom: 55px;}
+
+}
+
+
+
+
+
+

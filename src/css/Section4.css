@@ -1,0 +1,16 @@
+
+
+.Section4{position: relative;}
+.Section4 li{width: 50px; height: 40px; text-align: center; align-content: center; background-color: skyblue;}
+
+
+
+/* .Section4 NavLink { padding: 10px;} */
+
+ 
+ .mor{color: #777; transition: all .3s;
+  margin-top: auto; font-size: 1rem;
+ left: 350px; bottom: 0;
+}
+
+ .mor:hover{color: #333;}

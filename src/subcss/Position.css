@@ -1,0 +1,27 @@
+/* Wrapper 영역 */
+.nav{
+    display: flex;
+    gap: 30px;
+}
+
+.nav li a{
+    font-size: 1.5rem;
+    color: #ccc;
+    padding-bottom: 10px;
+    transition: all .5s ease-out;
+}
+
+.nav li:hover a{
+    color: #333;
+    background-color: #333;
+}
+.nav li a.active{
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+
+.box{
+    height: 2000px;
+    /* background: #ed4fed; */
+}

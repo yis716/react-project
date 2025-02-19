@@ -1,0 +1,90 @@
+.section1{
+    width: 100%;
+    height: 700px;
+}
+.section1 .secInner{
+    height: 500px;
+    position: relative;
+    background: url(../images/main/sec1-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.section1 .innerTxt{
+    text-align: center;
+    transform: translateY(140px);
+    padding: 0 5%;
+}
+.section1 .heading{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+.section1 .innerTxt p{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #57B7F2;
+}
+
+.section1 .innerTxt span{
+    font-size: 1.3rem;
+}
+
+.section1 figure{
+    position: absolute;
+    left: 50%;
+    bottom: -157px;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width:1280px) {
+    
+}
+
+@media screen and (max-width:1024px) {
+    
+}
+
+@media screen and (max-width:768px) {
+    .section1 .innerTxt p{
+        font-size: 2rem;
+    }
+    .section1 .innerTxt span{
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width:640px) {
+    .section1 .day{
+        font-size: .8rem;
+    }
+    .section1 .temperature{
+        font-size:.7rem;
+    }
+    .section1 .heading{
+        flex-direction: column;
+        gap: 0;
+    }
+}
+@media screen and (max-width:500px) {
+    .section1 .day{
+        font-size: .6rem;
+    }
+    .section1 .temperature{
+        font-size:.5rem;
+    }
+    .section1 .innerTxt{
+        transform: translateY(100px);
+    }
+}
+@media screen and (max-width:480px) {
+    .section1 .icon-container img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+
+

@@ -1,0 +1,246 @@
+.section3{
+    width: 90%;
+    padding: 100px 0;
+    margin: 0 auto;
+}
+
+/* inner전체 영역 */
+.section3 .secInner {
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.section3 .innerTxt {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+/* title 영역 */
+.section3 .secTitle p {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+.section3 .secTitle span {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* innerlist 영역 */
+.section3 .innerList li{
+    height: 355px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 180px;
+}
+@keyframes txt {
+    0% {
+        
+        transform: translateY(100px);
+        opacity: 0;
+      
+    }
+    100% {
+        
+        transform: translateY(0);
+        opacity: 1;
+      
+    }
+  }
+.section3 .innerList li dl{
+    animation: txt 1s;
+}
+.section3 .innerList dl dt{
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+/* swiper 영역 */
+.section3 .secSwip {
+    width: 60%;
+    position: relative;
+}
+
+.section3 .swiper-container {
+    height: 100%;
+    width: 100%;
+}
+
+.section3 .swiper-container .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: all .7s;
+}
+
+.section3 .swiper {
+    width: 100%;
+    height: 100%;
+} 
+
+.section3 .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+/* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section3 .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section3 .swiper-button-next:after,
+.section3 .swiper-button-prev:after{
+    color: #333;
+}
+
+.section3 .swiper-slide-active img,
+.section3 .swiper-slide.swiper-slide-duplicate.swiper-slide-active,
+.section3 .swiper-slide.swiper-slide-duplicate-active{
+    border-top-left-radius: 50px;
+}
+.section3 .swiper-slide.swiper-slide-duplicate.swiper-slide-duplicate-prev,
+.section3 .swiper-slide.swiper-slide-prev,
+.section3 .swiper-slide.swiper-slide-duplicate.swiper-slide-next,
+.section3 .swiper-slide.swiper-slide-next,
+.section3 .swiper-slide.swiper-slide-duplicate-next
+/* .swiper-slide.swiper-slide-duplicate */
+{
+    height: 400px;
+}
+
+.section3 .swiButton{
+    position: absolute;
+    right: 375px;
+    bottom: 40px;
+}
+
+/* button{
+    background: none;
+} */
+
+.section3 .chevronRight{
+    font-size: 1.5rem;
+    transform: translateX(5px);
+}
+
+.section3 .swiper-button-prev{
+    left: 51%;
+    
+}
+
+.section3 .swiper-button-next{
+    right: 39%;
+}
+
+.section3 .swiper-button-next, 
+.section3 .swiper-button-prev {
+    top: 95%;
+    z-index: 2;
+}
+
+@media screen and (max-width: 1280px) {
+    .section3 .swiper-button-next{
+        right: 37%;
+    }
+    .section3 .innerList li{
+        gap: 150px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .section3 .swiper-button-next{
+        right: 35%;
+    }
+    .section3 .secTitle p{
+        font-size: 2.2rem;
+    }
+    .section3 .secTitle span{
+        font-size: 1.1rem;
+    }
+    .section3 .innerList li{
+        gap: 120px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .section3 .swiper-button-next{
+        right: 33%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-button-next{
+        right: -10px;
+    }
+    .section3 .secInner{
+        height: auto;
+        justify-content: normal;
+        gap: 30px;
+        flex-direction: column
+    }
+    .section3 .innerTxt{
+        width: auto;
+    }
+    .section3 .swiper-container .swiper-slide {
+        transition: none;
+    }
+    .section3 .innerList li{
+        height: 180px;
+        gap: 30px;
+    }
+    .section3 .secSwip{
+        width: auto;
+    }
+    .section3 .swiper-container{
+        height: 350px;
+    }
+    .section3 .swiper-button-next, 
+    .section3 .swiper-button-prev{
+        top: 50%;
+    }
+    .section3 .swiper-button-next{
+        right: 5px;
+    }
+    .section3 .swiper-button-prev{
+        left: 5px;
+    }
+    .section3 .swiper-button-prev:after{
+        transform: translateX(-3px);
+    }
+        
+    .section3 .swiper-button-next:after{
+        transform: translateX(3px);
+    }
+    .swiper-button-next,
+    .swiper-button-prev{
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        transition: all .5s ease-out;
+    }
+    .swiper-button-next:hover,
+    .swiper-button-prev:hover{
+        background: rgba(255,255,255,.55);
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+    }
+}
+@media screen and (max-width: 640px) {
+    .section3 .innerList li{
+        height: auto;
+    }
+}

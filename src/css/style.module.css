@@ -1,0 +1,94 @@
+
+*{margin: 0; padding: 0;}
+a{color: #333; display: block; text-decoration: none;}
+.tabContainer{width: 100%; margin: 30px auto; height: 650px;
+   /* border: 1px solid #ccc; */
+   box-sizing: border-box; padding: 100px 200px; overflow: hidden;
+   background: url(../images/main/sec4-img1.jpg)
+   ;}
+.tabContainer h3{font-size: 2.5rem; margin-bottom: 25px;}
+/* .tabContainer p{font-size: 1.1rem;} */
+.tabMenu{display: flex; list-style: none; gap:15px; margin-bottom: 20px;}
+/* .tabMenu li{cursor: pointer;
+   border: 1px solid;
+   border-radius: 10px;
+   border-style: dashed;
+   padding: 3px 10px;
+} */
+.section4 a{cursor: pointer;
+   border: 1px solid;
+   border-radius: 20px;
+   border-style: dashed;
+   padding: 3px 10px;
+   transition: all .5s;
+}
+.section4 a.active{color: #fff; font-weight: bold; background: skyblue; border-radius: 20px; border-style: none;
+   letter-spacing: 3px;
+   padding: 5px 15px;
+}
+.tabContent{text-align: justify; line-height: 1.5rem; font-size: 1.2rem; height: 200px;
+   width: 50%; float: right;}
+
+h4{margin-bottom: 10px; font-size: 1.4rem;}
+
+@media screen and (max-width: 1280px) {
+   .tabContent p{
+      font-size: 1rem;
+   }
+}
+
+@media screen and (max-width: 1024px) {
+   .tabContent{
+      width: 70%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .tabContainer{
+      padding: 50px 50px;
+   }
+   .tabContent{
+      width: 100%; 
+      margin-top: 30px;
+   }
+}
+
+@media screen and (max-width: 640px) {
+
+}
+
+@media screen and (max-width: 480px) {
+   .tabMenu {
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-direction: column;
+   }
+   .tabContainer{
+      height: 720px;
+   }
+   .tabContainer h3{
+      font-size: 2.2rem;
+   }
+   .tabContent p {
+      font-size: .8rem;
+   }
+   h4 {
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+   }
+   .tabContent{
+      margin-top: 20px;
+      height: auto;
+   }
+   .section4 a{
+      text-align: center;
+   }
+   /* .tabMenu {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      margin-bottom: 20px;
+   } */
+}
+
+

@@ -1,0 +1,110 @@
+
+.section1 {
+    width: 100%;
+    height: 700px;
+    position: relative;
+}
+
+.section1 .weather-dashboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 5%;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 95px;
+    width: 90%;
+}
+
+.section1 .weather-card {
+    width: 10%;
+    height: 150px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .section1 .weather-card:hover {
+    transform: scale(1.05);
+} */
+
+.section1 .day {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.section1 .icon-container img {
+    width: 50px;
+    height: 50px;
+}
+
+.section1 .temperature {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.section1 .max-temp {
+    color: red;
+    font-weight: bold;
+}
+
+
+/* 배경색 스타일 */
+.section1 .blue {
+    background: #d7e3fc;
+    color: #1e3a8a;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section1 .gray {
+    background: #d1d5db;
+    color: #374151;
+}
+
+.section1 .red {
+    background: #fca5a5;
+    color: #7f1d1d;
+}
+
+@media screen and (max-width:1280px) {
+    
+}
+
+@media screen and (max-width:1024px) {
+    
+}
+
+@media screen and (max-width:768px) {
+
+}
+
+@media screen and (max-width:640px) {
+    .section1 .day{
+        font-size: .8rem;
+    }
+    .section1 .temperature{
+        font-size:.7rem;
+    }
+}
+@media screen and (max-width:500px) {
+    .section1 .day{
+        font-size: .6rem;
+    }
+    .section1 .temperature{
+        font-size:.5rem;
+    }
+}
+@media screen and (max-width:480px) {
+    .section1 .icon-container img{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
