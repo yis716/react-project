@@ -7,8 +7,7 @@ function Section2() {
   const [selectedDistrict, setSelectedDistrict] = useState(null);
 
   const load = () => {
-    //const url = "http://openAPI.seoul.go.kr:8088/737977415470737431303067715a4841/json/ListAirQualityByDistrictService/1/25/";
-    const url = "./dust.json";
+    const url = "http://openAPI.seoul.go.kr:8088/737977415470737431303067715a4841/json/ListAirQualityByDistrictService/1/25/";
 
     fetch(url)
       .then(result => result.json())
@@ -86,7 +85,7 @@ function Section2() {
               <p>미세먼지 (PM-10): {data.pm10} ㎍/㎥</p>
             </div>
           ))}
-        </li> */}
+        </li> */}e
       </ul>
     </li>
   ) : <p>데이터를 불러오는 중...</p>;

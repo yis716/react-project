@@ -12,6 +12,9 @@ function Footer() {
   const familyHandler = () => {
     setIsSwitced(!isSwitched);
   };
+  const closeFamilyMenu = () => {
+    setIsSwitced(false);
+ }
 
  const handleScroll = () => {
       //console.log(window.scrollY);
@@ -22,10 +25,6 @@ function Footer() {
          setUpDown(false); //up(안보인다)
       } 
     };
-  
-  const closeFamilyMenu = () => {
-    setIsSwitced(false);
-  };
 
    useEffect(() => {
       // window에 scroll 이벤트를 넣는다.
@@ -48,20 +47,19 @@ function Footer() {
     <footer>
       <div className="F_top">
       <img src={img1} alt="기상청 로고" />
-        <div className="dropup-center" onMouseLeave={closeFamilyMenu} >    
-          {/* 마우스 벗어나면 자동 닫힘 */}
+        <div className="dropup-center" onMouseLeave={closeFamilyMenu}>
           <button type="button" onClick={familyHandler}>
             Family Site <span><IoAddCircleOutline /></span>
           </button>
           <ul className={isSwitched ? "show" : "hide"}>
             <li>
-              <a href="https://www.ndmi.go.kr/home/main.do" target='blank' title='새창으로 열림'>국립재난안전연구원</a>
+              <a href="https://www.ndmi.go.kr/home/main.do" target='_blank' title='새창으로 열림'>국립재난안전연구원</a>
             </li>
             <li>
-              <a href="https://119.seoul.go.kr/asims/main.do" target='blank' title='새창으로 열림'>서울종합방재센터</a>
+              <a href="https://119.seoul.go.kr/asims/main.do" target='_blank' title='새창으로 열림'>서울종합방재센터</a>
             </li>
             <li>
-              <a href="https://www.kmiti.or.kr/" target='blank' title='새창으로 열림'>한국기상산업기술원</a>
+              <a href="https://www.kmiti.or.kr/" target='_blank' title='새창으로 열림'>한국기상산업기술원</a>
             </li>
           </ul>
           <p>기상청 <br/> 고객센터 131 (유료)</p>
@@ -97,10 +95,7 @@ function Footer() {
         </p>
       </div>
       
-      <button className={'top_move ' + (upDown ? 'down' : 'up')} onClick={topHandler}>
-        <span>TOP</span>
-      </button>
-
+        <a className={'top_move '+( upDown ? 'down' : 'up' )} href="#" onClick={topHandler}><span>TOP</span></a>
     </footer>
   );
 }

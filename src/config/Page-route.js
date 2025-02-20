@@ -1,8 +1,6 @@
 import Main from '../pages/Main.js';
 import About from '../pages/About.js';
 import Position from '../pages/Position.js';
-import Position2 from '../pages/Position2.js';
-import Position3 from '../pages/Position3.js';
 import Data from '../pages/Data.js';
 import Notice from '../pages/Notice.js';
 import Letter from '../pages/Letter.js';
@@ -19,16 +17,8 @@ const navpass = [
     component:About
     },
    {
-    path:'/Position',
+    path:'/Position/*',
     component:Position
-   },
-   {
-    path:'/Position2',
-    component:Position2
-   },
-   {
-    path:'/Position3',
-    component:Position3
    },
    {
     path:'/Data',

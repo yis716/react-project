@@ -6,10 +6,71 @@ header{width: 100%;  padding: 20px 0;
 header h1{width: 180px; height: 70px; margin: 0 auto 30px auto;}
 nav ul{display: flex; justify-content: space-evenly;}
 nav{width: 98%; font-weight: 600; margin: 0 auto; font-family: "Roboto";box-sizing: border-box;}
-nav a{font-size: 1.3rem; display: block; text-decoration: none; margin: 0 15px;color: #333;}
-.active{color: #0568a5;}
+nav a{font-size: 1.3rem; display: block; text-decoration: none; color: #333;}
+.active{color: #57B7F2;}
 header button{position: absolute; right: 20px;top:30px; cursor: pointer;background: none; display: none;}
 header button .ico{ font-size: 2rem; }
+
+header button{position: absolute; right: 10px; top: 12px; height: 50px; z-index:110 ; display: none;}
+header button span{
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: relative;
+    text-indent: -9999px;
+    display: block;
+    margin: 26px 15px;
+    transition: all .3s;
+    }
+    header button span::before{
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333;
+    position: absolute;
+    top: -7px;
+    left: 0;
+    transition: all .3s; 
+    }
+    header button span::after{
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    top: 7px;
+    left: 0;
+    transition: all .3s;
+        }
+
+    /* 메뉴가 열렸을때 */
+   
+    header button span, header button span::before, header button span::after { 
+        content: '';
+        width: 25px;
+        height: 3px;
+        background: #333;
+    }
+    header button span, header button span::before, header button span::after {
+        content: '';
+        width: 25px;
+        height: 3px;
+        background: #333;
+    }
+    
+    header button.mn_open span {
+        background: rgba(0,0,0,0);
+     }
+    header button.mn_open span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    header button.mn_open span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
 
 .ch h1{float: left; padding-left:50px; }
 .ch nav{padding-top: 25px; margin: 0;}
@@ -60,16 +121,17 @@ footer .top_move.down:hover span{display: none;}
 @media screen and (max-width:1024px) {
     header{height: 60px;}
     header .header_inner{display: block;}
-    header .header_inner nav{width: 100%; background:skyblue ;position: absolute; left:0; top:100px; 
+    header .header_inner nav{width: 100%; background:#fff;position: absolute; left:0; top:100px; 
        height: 0; overflow: hidden;  transition: all .5s; }
-    header .header_inner nav.show{height:500px;}
+    header .header_inner nav.show{height:100vh;}
     header .header_inner nav.hide{height: 0;}
-    header .header_inner nav ul{display:block;padding: 10px 0; }
+    header .header_inner nav ul{display:block;padding: 70px 0; }
     header .header_inner nav ul li{width:100%; text-align: center;}
-    header .header_inner nav ul li a{padding: 10px 0; transition:all .5s ;}
-    header .header_inner nav ul li a:hover{background: #fff;}
+    header .header_inner nav ul li a{padding: 30px 0; transition:all .5s ;}
+    header .header_inner nav ul li a:hover{color:#57B7F2 ;}
     header button{display: block;}
     .ch nav{padding-top:0;}
+
 }
 
 @media screen and (max-width:800px) {

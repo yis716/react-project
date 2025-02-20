@@ -13,7 +13,6 @@
 
 .nav li:hover a{
     color: #333;
-    background-color: #333;
 }
 .nav li a.active{
     color: #333;
@@ -21,7 +20,63 @@
 }
 
 
-.box{
-    height: 2000px;
+/* 공통 */
+p{
+    margin-bottom: 10px;
+}
+
+.container{
+    width: 90%;
+    margin: 0 5%;
+    height: auto;
     /* background: #ed4fed; */
+}
+
+.commonTit{
+    margin: 50px 0 100px;
+}
+
+.commonTit p:nth-child(1){
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.commonTit p:nth-child(2){
+    font-size: 1.2rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.commonTit p:nth-child(2)::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.commonTit p:nth-child(3){
+    font-size: 1.2rem;
+    padding-left: 20px;
+    position: relative;
+}
+
+.commonTit p:nth-child(3)::before{
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #000;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+/* coninner */
+.conInner{
+    
 }
