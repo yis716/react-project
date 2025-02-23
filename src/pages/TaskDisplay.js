@@ -1,25 +1,37 @@
 import React from 'react';
 
-const TaskDisplay = ({weather}) => {
+const TaskDisplay = ({weather,local}) => {
+
     return (
   
      <div className="output_box">
-      <ul>  
+
+        <h3>{local.toUpperCase()}</h3>
+        <table>
+          <thead>
+            <tr>
+               <th scope="col">월별</th>
+               <th scope="col">평균기온</th>
+               <th scope="col">평균강수량</th>
+               <th scope="col">평균풍속</th>
+            </tr>
+
+            </thead>
+            <tbody>
         {
-         weather.map((pro, ind) => {
+         weather.map((weather, ind) => {
             return ( 
-            <li key={ind}>
-                 <img src={require('../images/notice/'+pro.Image)} alt="" />
-                 <dl>
-                    <dt>{pro.Name}</dt>
-                    <dd>{pro.Price + '원'}</dd>
-                    <dd>{pro.Descript}</dd>
-                 </dl>
-            </li>
+            <tr key={ind}>
+                    <td>{ind+1}월</td>
+                    <td>{weather.Temp}</td>
+                    <td>{weather.Rain}</td>
+                    <td>{weather.Wind}</td>
+            </tr>
             )
          })
         }
-      </ul>
+        </tbody> 
+         </table>
      </div>
     )
   }

@@ -28,14 +28,16 @@ function Position() {
                     </ul>
                 </S.Head>
             </S.Wrapper>
-            <div className='container'>
-                <Routes>
-                    <Route exact path="/" element={<Position1/>}></Route>
-                    <Route path="/Position1" element={<Position1/>}></Route>
-                    <Route path="/Position2" element={<Position2/>}></Route>
-                    <Route path="/Position3" element={<Position3/>}></Route>
-                </Routes>
-            </div>
+           <div className='position'>
+             <div className='container'>
+                 <Routes>
+                     <Route exact path="/" element={<Position1/>}></Route>
+                     <Route path="/Position1" element={<Position1/>}></Route>
+                     <Route path="/Position2" element={<Position2/>}></Route>
+                     <Route path="/Position3" element={<Position3/>}></Route>
+                 </Routes>
+             </div>
+           </div>
         </div>
     );
   }

@@ -21,33 +21,44 @@
 
 
 /* 공통 */
-p{
-    margin-bottom: 10px;
+.position{
+    margin-bottom: 100px;
 }
-
-.container{
+.position p{
+    padding-left: 20px;
+    margin-bottom: 5px;
+}
+.position .bottom{
+    padding-left: 0;
+    font-size: 1.1rem;
+    text-align: right;
+}
+.position .container{
     width: 90%;
     margin: 0 5%;
     height: auto;
     /* background: #ed4fed; */
 }
 
-.commonTit{
+.position .commonTit{
     margin: 50px 0 100px;
 }
 
-.commonTit p:nth-child(1){
+.position .commonTit p:nth-child(1){
     font-size: 2rem;
     font-weight: 700;
+    padding-left: 0;
 }
 
-.commonTit p:nth-child(2){
+.position .commonTit>p:nth-child(2),
+.position .commonTit>p:nth-child(3){
     font-size: 1.2rem;
     padding-left: 20px;
     position: relative;
 }
 
-.commonTit p:nth-child(2)::before{
+.position .commonTit>p:nth-child(2)::before,
+.position .commonTit>p:nth-child(3)::before{
     content: "";
     display: block;
     width: 10px;
@@ -58,25 +69,184 @@ p{
     top: 10px;
     left: 0;
 }
-
-.commonTit p:nth-child(3){
-    font-size: 1.2rem;
-    padding-left: 20px;
+.position .con{
     position: relative;
+    margin-bottom: 50px;
 }
 
-.commonTit p:nth-child(3)::before{
+.position .con h4::before {
     content: "";
     display: block;
-    width: 10px;
-    height: 10px;
+    width: 50px;
+    height: 50px;
+    background: #E1E16A;
     border-radius: 50%;
-    background: #000;
     position: absolute;
-    top: 10px;
     left: 0;
+    top: -16px;
+    z-index: -1;
 }
-/* coninner */
-.conInner{
-    
+
+.position h4 {
+    font-size: 1.7rem;
+    padding-left: 20px;
+}
+
+.position h5{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.position span{
+    display: block;
+    padding-left: 50px;
+    color: #666;
+}
+.position .midTxt{
+    margin: 30px 0 10px;
+}
+.position .midTxt p{
+    font-weight: 500;
+}
+
+.position .conInimg{
+    margin-top: 30px;
+    display: flex;
+    gap: 50px;
+
+}
+.position .conInimg img{
+    border-radius: 30px;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* position1영역 */
+
+
+/* eqCon2 영역 */
+.position .eqCon2 img{
+    width: 50%;
+    height: 600px;
+}
+
+/* eqCon3 영역 */
+.position .eqCon3 img{
+    width: 50%;
+    height: 650px;
+}
+
+/* eqCon4 영역 */
+.position .eqCon4 .con4In span{
+    padding-left: 50px;
+}
+.position .eqCon4 .conInimg{
+    width: 100%;
+    gap: 20px;
+    margin: 30px 0;
+}
+.position .eqCon4 .conInimg img{
+    width: 25%;
+    height: 400px;
+}
+
+/* eqCon5영역 */
+.position .eqCon5 img{
+    width: 33.33%;
+    height: 400px;
+}
+
+/* eqCon6영역 */
+.position .eqCon6 img{
+    width: 33.33%;
+    height: 400px;
+}
+
+/* position2영역 */
+.position .outBox{
+    padding: 0 0 100px;
+}
+.position .outBox > p{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.position .outBox .infoIneer{
+    display: flex;
+    justify-content: space-between;
+}
+.position .outBox .infoIneer li{
+    margin-bottom: 10px;
+}
+/* .position .outBox .infoIneer li:nth-of-type(4){
+    display: flex;
+} */
+.position .outBox .infoIneer .date{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* position3영역 */
+.position .offerInner .offerHead{
+    position: relative;
+}
+.position .offerInner .offerHead h4::before{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #E1E16A;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -11px;
+    z-index: -1;
+}
+
+.position .offerInner .offer {
+    margin: 30px 0 50px;
+}
+
+.offerInner .offer p {
+    text-align: center;
+}
+
+.offerInner .offer {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.position .offerInner .offer th,
+.position .offerInner .offer td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.position .offerInner .offer th {
+    text-align: center;
+    background-color: #dfdfdf;
+    tab-size: 1.1rem;
+    background-color: #f2f2f2;
+    font-weight: 500;
+}
+
+.position .offerInner .midCon1{
+   
+}
+
+.position .offerInner .midCon2 {
+  
+}
+.position .offerInner .midCon3 {
+   
+}
+.position .offerInner .midCon4 {
+   
+}
+.position .offerInner .midCon5 {
+  
 }
