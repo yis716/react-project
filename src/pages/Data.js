@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route, NavLink} from 'react-router-dom';
+import {Routes, Route, NavLink, Navigate } from 'react-router-dom';
 import * as S from "../Styled";
 import '../subcss/Data.css';
 
@@ -18,11 +18,11 @@ function Data() {
     
 
     return (
-        <div>
+        <div className='data'>
             <S.Wrapper>
                 <S.Head>
-                    <h2 className='hidden'>기상정보</h2>
-                    <S.P>기상·기후서비스</S.P>
+                    <h3 className='hidden'>기상정보</h3>
+                    <S.P>기상정보 공개</S.P>
                     <ul className='nav'>
                         <li>
                             <NavLink to="/Data/Data1" className='link'>미세먼지 수치</NavLink>
@@ -38,8 +38,7 @@ function Data() {
             </S.Wrapper>
             <div className='container'>
                 <Routes>
-                    <Route exact path="/" element={<Data1/>}></Route>
-                    <Route path="/Data1" element={<Data1/>}></Route>
+                    <Route exact path="/" element={<Navigate replace to="/Data/Data1" />}></Route>                    <Route path="/Data1" element={<Data1/>}></Route>
                     <Route path="/Data2" element={<Data2/>}></Route>
                     <Route path="/Data3" element={<Data3/>}></Route>
                 </Routes>

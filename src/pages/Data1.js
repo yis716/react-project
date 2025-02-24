@@ -32,56 +32,44 @@ function Data1() {
 
       // const taskDisplay = tasks.length > 0 ? (
       
-      const taskDisplay = tasks.map((task,ind) => {
-        return ( 
-          <div>
-            {/* <table key={ind}>
-              <thead>
-                <th>초미세먼지(㎍/㎥)</th>
-                <tr>초미세먼지(㎍/㎥)</tr>
-                <tr>초미세먼지(㎍/㎥)</tr>
-                <tr>초미세먼지(㎍/㎥)</tr>
-                <tr>초미세먼지(㎍/㎥)</tr>
-                <tr>초미세먼지(㎍/㎥)</tr>
-                <tr>초미세먼지(㎍/㎥)</tr>
-              </thead>
-              <tbody>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-                <th>{task.PM25}</th>
-              </tbody>
-              </table> */}
-               <ul key={ind}>
-                   <li>초미세먼지(㎍/㎥) : {task.pm25}</li>
-                   <li>미세먼지(㎍/㎥) : {task.pm10}</li>
-                   <li>아황산가스(ppm) : {task.so2}</li>
-                   <li>이산화질소농도(ppm) : {task.no2}</li>
-                   <li>일산화탄소농도(ppm) : {task.co}</li>
-                   <li>측정년도 : {task.msrdt_year}</li>
-                   <li>오존농도(ppm) : {task.o3}</li>
-                   <li>측정소명 : {task.msrste_nm}</li>
-               </ul>
-          </div>
-          
-          
-        )
-    });
-  // ) : <p>데이터를 불러오는 중...</p>;
 
   return (
-    <div>
-      <h3>기상관측정보</h3>
+    <div className='data1'>
+      <h4>기상관측정보</h4>
       <p>기상관측정보는 서울시의 기상관측시스템 또는 도로변에 설치된 측정소에서 수집된 황사, 오존, 초미세먼지 등 대기오염물질에 대해 일별, 연도별, 관측소별로 정보를 제공하는 데이터셋입니다. 또한, 현재 대기오염상태를 제공하는 대기오염전광판의 위치정보를 제공하고 있습니다. 기상관측정보는 시민들에게 서울시 내의 대기오염물질 현황 및 대기오염물질 경보발령 현황에 대한 정보를 제공하여 서울 전체 지역에 대한 대기오염물질 정보를 파악하고 시민들이 마스크착용 등 각종 예방대책을 마련하여 외부에서 활동할 수 있도록 도움을 줍니다.</p>
-      <h3>미세먼지 수치</h3>
-      <p>서울특별시 대기질 자료(초미세먼지, 미세먼지) 입니다.
+      <h4>미세먼지 수치</h4>
+      <p>서울특별시 대기질 자료(초미세먼지, 미세먼지) 입니다. <br/>
       2008년 1월부터 2022년 12월 31일까지의 자료로 자치구별 시간 평균 자료(서울시 평균 자료 포함)입니다.</p>
-      <div>
-        {taskDisplay}
-       
+      <div className='data-table-container'>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">초미세먼지(㎍/㎥)</th>
+              <th scope="col">미세먼지(㎍/㎥)</th>
+              <th scope="col">아황산가스(ppm)</th>
+              <th scope="col">이산화질소농도(ppm)</th>
+              <th scope="col">일산화탄소농도(ppm)</th>
+              <th scope="col">측정년도</th>
+              <th scope="col">오존농도(ppm)</th>
+              <th scope="col">측정소명</th>
+            </tr>
+          </thead>
+          <tbody>
+          {tasks.map((task,ind) => (
+          <tr key={ind}>
+            <td>{task.pm25}</td>
+            <td>{task.pm10}</td>
+            <td>{task.so2}</td>
+            <td>{task.no2}</td>
+            <td>{task.co}</td>
+            <td>{task.msrdt_year}</td>
+            <td>{task.o3}</td>
+            <td>{task.msrste_nm}</td>
+          </tr>
+          ))}
+          </tbody>
+        </table>
+            {/* : <p>데이터를 불러오는 중...</p>; */}
       </div>
     </div>
  );

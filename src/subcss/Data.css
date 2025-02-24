@@ -1,0 +1,59 @@
+/* Wrapper 영역 */
+.data{
+    width: 80%;
+    margin: 0 10%;
+}
+
+.data .nav{
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.data .nav li a{
+    font-size: 1.5rem;
+    color: #ccc;
+    padding-bottom: 10px;
+    transition: all .5s ease-out;
+}
+
+/* .data .nav li:hover a{
+    color: #333;
+} */
+.data .nav li a.active{
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+
+.data h3{}
+.data .data-table-container {
+    max-height: 700px; 
+    overflow-y: auto;  
+    border: 1px solid #ddd;
+  }
+.data table{
+    /* background: #ccc; */
+    width: 100%; height: 1000px;
+    text-align: center;
+    border-collapse: collapse;
+}
+.data thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    top: 0;
+  }
+/* .data1 table tr{padding: 20px 0;} */
+.data th{
+    padding: 10px 0;
+    color: #57B7F2;
+}
+.data td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+
+  
