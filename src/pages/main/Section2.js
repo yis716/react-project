@@ -137,7 +137,7 @@ function Section2() {
             onMouseLeave={() => setSelectedDistrict(null)}
             onClick={() => setSelectedDistrict(prev => prev === task.MSRSTENAME ? null : task.MSRSTENAME)}
           >
-            <h5>{task.MSRSTENAME}</h5>
+            <span>{task.MSRSTENAME}</span>
             {selectedDistrict === task.MSRSTENAME && (
               <div className="tooltip-content">
                 <p>{task.PM25} | {task.PM10}</p>

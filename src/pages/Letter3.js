@@ -95,11 +95,11 @@ function Letter3() {
   ];
 
   return (
-    <div className="container">
+    <div className="container3">
       <ul className="con31box">
         {civilServiceInfoList.map((section, sectionIndex) => (
           <li key={`section-${sectionIndex}`}>
-            <h4>{section.title}</h4>
+            <h5>{section.title}</h5>
             <ul className="con31in">
               {section.contents.map(
                 (content, contentIndex) =>
@@ -111,7 +111,7 @@ function Letter3() {
       </ul>
 
       <div className="tablewrap">
-        <h4>민원 처리기간</h4>
+        <h5>민원 처리기간</h5>
         <p>
           일반적으로 접수일로부터 7일에서 14일 이내에 처리되나 토요일·공휴일은 제외되며, 민원의
           성격이나 해당 민원을 처리하는 기관의 규정에 따라 일부 달라질 수 있습니다. 아울러 부득이한
@@ -137,8 +137,11 @@ function Letter3() {
       </div>
 
       <div className="qna">
-        <h4>자주하는 질문</h4>
-        <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
+        <h5>자주하는 질문</h5>
+        <Accordion
+          expanded={expanded === "panel1"}
+          onChange={handleChange("panel1")}
+          slotProps={{ heading: { component: "p" } }}>
           <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
             <Typography component="span">현상일수는 어떻게 산출하나요?</Typography>
           </AccordionSummary>
@@ -154,7 +157,10 @@ function Letter3() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
+        <Accordion
+          expanded={expanded === "panel2"}
+          onChange={handleChange("panel2")}
+          slotProps={{ heading: { component: "p" } }}>
           <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
             <Typography component="span">기상현상기호 종류는 무엇이 있나요?</Typography>
           </AccordionSummary>
@@ -165,7 +171,10 @@ function Letter3() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === "panel3"} onChange={handleChange("panel3")}>
+        <Accordion
+          expanded={expanded === "panel3"}
+          onChange={handleChange("panel3")}
+          slotProps={{ heading: { component: "p" } }}>
           <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
             <Typography component="span">민원발급자료에 신청인 정보가 없어요</Typography>
           </AccordionSummary>
@@ -176,7 +185,10 @@ function Letter3() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === "panel4"} onChange={handleChange("panel4")}>
+        <Accordion
+          expanded={expanded === "panel4"}
+          onChange={handleChange("panel4")}
+          slotProps={{ heading: { component: "p" } }}>
           <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
             <Typography component="span">어떤 자료를 신청할 수 있나요?</Typography>
           </AccordionSummary>
@@ -191,7 +203,10 @@ function Letter3() {
             </Typography>
           </AccordionDetails>
         </Accordion>
-        <Accordion expanded={expanded === "panel5"} onChange={handleChange("panel5")}>
+        <Accordion
+          expanded={expanded === "panel5"}
+          onChange={handleChange("panel5")}
+          slotProps={{ heading: { component: "p" } }}>
           <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
             <Typography component="span">
               기상현상증명에 원하는 지점 자료가 없을 때는 어떻게 하나요?

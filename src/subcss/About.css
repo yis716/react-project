@@ -1,0 +1,144 @@
+.subnav h3{font-size: 3rem; font-weight: 700; margin: 250px 0 100px 0;}
+.subnav h4{font-size: 1.5rem; font-weight: 500; margin-bottom: 0;}
+/* h5{font-size: 1.5rem; font-weight: 600;} */
+
+img{object-fit: contain; object-position: center;}
+
+.subnav{margin: 200px auto 50px auto; width: 80%;}
+.MuiTabs-scroller .MuiTabs-indicator{background-color: #333;}
+.MuiTabs-root .MuiTabs-scroller .MuiTabs-flexContainer .Mui-selected{color: rgba(0,0,0,.0);}
+.MuiBox-root .MuiTabPanel-root{padding: 100px 0;}
+
+
+
+/* About1 기관장 소개 */
+.intro{width: 90%; margin: 0 auto; margin-top: 10%; position: relative; margin-bottom: 100px;
+    border: 1px solid red;}
+.intro h3{font-size: 2rem;}
+.intro .introInner{display: flex; gap: 10%;}
+.intro .introInner div{margin-top: auto; text-align: justify;}
+.intro .introInner div>span{font-size: 1.5rem; font-weight: bold; 
+    position: absolute; top: 10%; right: 22%; color: #57B7F2; text-shadow: 2px 2px 30px #fff;}
+.intro .introInner div p{font-size: 1.13rem;}
+.intro .introInner div p:nth-last-of-type(2) span{color: #4FA4D9; font-weight: 500;}
+.intro .introInner div p:nth-last-of-type(1){margin-top: 7%;}
+.intro .introInner div p:nth-last-of-type(1) span{font-size: 1.5rem; font-weight: 500; }
+.intro .introInner img{margin-bottom: 100px;}
+
+/* About1 기관장 약력 */
+.profile{width: 100%;
+    height: 500px;
+    background: #f8f8f8;}
+
+/* About1 역대 기관장 */
+.directors{width: 100%; margin: 0 auto; margin-top: 10%; margin-bottom: 100px;}
+
+
+
+
+
+
+
+/* About2 기관연혁 */
+/* .line-boxs .icon .line { display: none;}
+.line-boxs { position: relative; width: 20px; height: calc(100% + 200px); margin-top: 11vw;}
+.line-boxs .icon-box { position: relative; width: 50%; height: 10px; position: relative; background: #ddd; border-radius: 50%; margin: 0 auto; z-index: 8;}
+.line-boxs .icon-box.active:before { border-color: #151515;}
+.line-boxs .line { width: 1px; height: 100%; position: absolute; left: 50%; transform: translateX(-50%); top: 5px; background: #ddd;}
+.line-boxs .line .percentage { position: absolute; top: 0; left: 0; width: 100%; height: 100%; transform-origin: top; transform: scaleY(0); background: var(--accent-color);}
+.line-boxs .icon-box .circle { position: absolute; border-radius: 50%; width: 100%; height: 100%; background: rgba(32, 53,48, .15); animation: pointer2 1.5s ease-in-out infinite; opacity: 0; visibility: hidden;}
+@media screen and (max-width: 767px) {
+    .line-boxs { height: calc(100% + 120px);}
+} */
+
+/* .about2Box{width: 90%; margin: 0 auto;}
+.about2Box .year0{display: flex; justify-content: center; position: relative;}
+.about2Box .year0 .timeline{text-align: center; border: 1px solid orange; 
+    margin: 0 auto;}
+.about2Box .year0 .timeline span{display: block; width: 2px; height: 100%; background: #57B7F2; margin: 0 auto;
+   }
+.about2Box .year0 .timeline .icoSnow{border: 1px solid red; }
+
+.about2Box .year20 .imgBox{width: 400px; background: url(../images/about/about2_1.jpg);
+    border: 1px solid green;}
+.about2Box .year20 .imgBox p{text-align: right; margin-top: auto;}
+
+ 
+
+.about2Box .year90{display: flex;}
+.about2Box .year90 .imgBox{width: 400px; background: url(../images/about/about2_1.jpg);}
+.about2Box .year90 .imgBox p{}
+
+
+.about2Box .year70{display: flex;}
+.about2Box .year70 .imgBox{width: 400px; background: url(../images/about/about2_1.jpg);}
+.about2Box .year70 .imgBox p{} */
+
+.about2Box{width: 90%; margin: 0 auto;}
+.about2Box .timeBox{
+    display: grid;  
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows:auto;
+    gap:0;
+    grid-template-areas:
+          'a b c '
+          'd b e '
+          'f b g ';
+}
+
+.about2Box .timeBox .imgBox20{grid-area: a; }
+.about2Box .timeBox .timeline{grid-area: b; }
+.about2Box .timeBox .timeTxt20{grid-area: c; }
+.about2Box .timeBox .timeTxt90{grid-area: d; }
+.about2Box .timeBox .imgBox90{grid-area: e; }
+.about2Box .timeBox .imgBox70{grid-area: f; }
+.about2Box .timeBox .timeTxt70{grid-area: g; }
+
+.about2Box .timeBox .timeline{}
+.about2Box .timeBox .timeline span{display: block; width: 2px; height: 30%; background: #ddd; 
+    margin: 0 auto; margin-bottom: 7px; }
+.about2Box .timeBox .timeline .icoSnow{color: #57B7F2;}
+
+
+
+
+.about2Box .timeBox .imgBox20{width: 400px; height: 100px; background: url(../images/about/about2_1.jpg);
+    border: 1px solid green;}
+.about2Box .timeBox .imgBox20 .imgBox p{text-align: right; margin-top: auto;}
+
+ 
+
+
+.about2Box .timeBox .imgBox90{width: 400px; height: 100px; background: url(../images/about/about2_2.jpg);}
+.about2Box .timeBox .imgBox90 p{}
+
+
+
+.about2Box .timeBox .imgBox70{width: 400px; height: 100px; background: url(../images/about/about2_3.jpg);}
+.about2Box .timeBox .imgBox70 p{} 
+
+
+
+/* About3 오시는길 */
+.about3Box{width: 100%;}
+.about3Box .meteorMap{}
+.about3Box .mapInfo{
+    display: grid;  
+    justify-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows:auto;
+    gap:0;
+    grid-template-areas:
+          'a b c '
+          'd b e '
+          'f b g ';
+}
+
+.about2Box .timeBox .imgBox20{grid-area: a; }
+.about2Box .timeBox .timeline{grid-area: b; }
+.about2Box .timeBox .timeTxt20{grid-area: c; }
+.about2Box .timeBox .timeTxt90{grid-area: d; }
+.about2Box .timeBox .imgBox90{grid-area: e; }
+.about2Box .timeBox .imgBox70{grid-area: f; }
+.about2Box .timeBox .timeTxt70{grid-area: g; }

@@ -5,7 +5,7 @@ function About1(props) {
   return (
         <div className="about1Box">
             <div className="intro">
-                <h4>기관장 인사말</h4>
+                <h5>기관장 인사말</h5>
                 <div className="introInner">
                     <div>
                         <span>
@@ -30,12 +30,12 @@ function About1(props) {
             </div>
 
             <div className="profile"> 
-                <h4>기관장 약력</h4>
+                <h5>기관장 약력</h5>
 
             </div>
 
             <div className="directors"> 
-                <h4>역대 기관장</h4>
+                <h5>역대 기관장</h5>
 
             </div>
         </div>

@@ -90,8 +90,12 @@ function Position3() {
                         </p>
                         <div className='midTxt'>
                             <p>온라인 안내</p>
-                            <span>기상현상증명 : 기상청 전자민원(minwon.kma.go.kr)</span>
-                            <span>기상정보제공 : 기상자료개발포털(data.kma.go.kr)</span>
+                            <a href='https://minwon.kma.go.kr/main/main.do' target='_blank' title='기상청전자민원 사이트 새 창에 열림'>
+                                <span>기상현상증명 : 기상청 전자민원(minwon.kma.go.kr)</span>
+                            </a>
+                            <a href='https://data.kma.go.kr/cmmn/main.do' target='_blank' title='기상자료개발포털 사이트 새 창에 열림'>
+                                <span>기상정보제공 : 기상자료개발포털(data.kma.go.kr)</span>
+                            </a>
                         </div>
                     </div>
                 </div>

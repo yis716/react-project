@@ -92,13 +92,13 @@ function Letter2() {
       <ul className="con1box">
         {LetterCon2.map((item, index) => (
           <li key={`LetterCon2-${index}`}>
-            <h4>{item.title}</h4>
+            <h5>{item.title}</h5>
             <p>{item.con}</p>
           </li>
         ))}
       </ul>
       <div className="con2">
-        <h4>처리절차</h4>
+        <h5>처리절차</h5>
         <ul className="con2box">
           {procedure.map((item, index) => (
             <li key={`procedure-${index}`}>
@@ -150,7 +150,7 @@ function Letter2() {
       <div className="proposal">
         <dl>
           <dt>
-            <h4>공개제안</h4>
+            <h5>공개제안</h5>
           </dt>
           <dd>공개 제안 시스템이 국민신문고로 통합 운영됩니다.</dd>
           <dd>

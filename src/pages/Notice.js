@@ -4,10 +4,17 @@ import { getDocs, collection} from 'firebase/firestore';
 import { db } from '../firebase'; 
 import TaskDisplay from './TaskDisplay';
 import { FaSearch } from "react-icons/fa";
+import { LineChart } from "@mui/x-charts/LineChart";
+
+
 
 
 
 function Notice() {
+
+  const months = ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"];
+  const avgLowTemp = [-6.1, -3.9, 1.2, 7.6, 13.1, 18.2, 22.7, 23.8, 18.4, 11.2, 4.3, -2.8]; // 평균 최저 기온
+  const avgHighTemp = [1.5, 4.6, 10.4, 17.6, 23.3, 27.3, 29.6, 30.3, 26.4, 20.1, 11.9, 4.2]; // 평균 최고 기온
 
     const [weather, setWeather] = useState([]); //데이터베이스의 문서들 저장(서울)
     const [weather2, setWeather2] = useState([]); //데이터베이스의 문서들 저장(경기도)
@@ -117,12 +124,43 @@ function Notice() {
         searchHandler(searchtext,e);
       }
     }
+
+
+ 
+      const [chartWidth, setChartWidth] = useState(window.innerWidth * 0.9);
+    
+      useEffect(() => {
+        const handleResize = () => {
+          setChartWidth(window.innerWidth * 0.9);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+      }, []);
+   
+   
   
     return (
       <div className="notice">
   
         <div className="weather">
              <h3>기상연구</h3>
+              
+              <p>"미래를 위한 데이터, 기후를 연구하다."</p>
+              <div className='re_tit_img'>
+              <p>기후평년값은 '0'으로 끝나는 해의 최근 30년간의 누년평균값으로 정의됩니다. 기후평년값은 현재 기상에 대한 비교와 기후변화 예측에 활용하기 위해 산출하며, 이상기후 평가, 범정부 기후변화 대응정책 수립, 방재 · 건설기준 설정 등 다양한 분야에서 기초자료로 활용되는 주요지표입니다.
+              기상청은 세계기상기구(WMO)의 권고에 따라 매 10년 주기로 새로운 기후평년값을 산출하여 제공합니다</p>
+              </div>
+              <div className='chart-container'>
+              <p>대한민국 월별 평균 기온</p>
+              <LineChart
+                xAxis={[{ data: months, scaleType: "point" }]}
+                series={[
+                  { data: avgLowTemp, label: "평균 최저 기온 (℃)", color: "skyblue" },
+                  { data: avgHighTemp, label: "평균 최고 기온 (℃)", color: "orange" }
+                ]}
+                width={chartWidth}
+                height={400}
+              />
               <div className="serch_box">
                 <form>
                   <input id="title" type="text" placeholder="ex) seoul,서울,경기도,강원도,부산,독도,제주도" value={searchtext} onChange={changeHandler} onKeyDown={(e)=>enterHandler(e)} />
@@ -130,12 +168,8 @@ function Notice() {
                   <button className="btn_all" type="button" onClick={allHandler}>All</button>
                 </form>  
               </div>
-              <p>"미래를 위한 데이터, 기후를 연구하다."</p>
-              <div className='re_tit_img'>
-              <p>기후평년값은 '0'으로 끝나는 해의 최근 30년간의 누년평균값으로 정의됩니다. 기후평년값은 현재 기상에 대한 비교와 기후변화 예측에 활용하기 위해 산출하며, 이상기후 평가, 범정부 기후변화 대응정책 수립, 방재 · 건설기준 설정 등 다양한 분야에서 기초자료로 활용되는 주요지표입니다.
-              기상청은 세계기상기구(WMO)의 권고에 따라 매 10년 주기로 새로운 기후평년값을 산출하여 제공합니다</p>
               </div>
-
+       
             {
                firstLoad ? 
                <>

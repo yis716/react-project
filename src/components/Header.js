@@ -6,7 +6,7 @@ import img1 from "../images/logo.png";
 function Header() {
 
     const [scroll, setScroll] = useState(0);   //스크롤 거리
-    const smh = 900; // 비주얼 이미지 높이 (예제에서는 900px)
+    const smh = 200; // 비주얼 이미지 높이 (예제에서는 900px)
     const [headHeight, setHeadHeight] = useState();  //헤더의 높이
     const [width, setWidth] = useState(window.innerWidth); //스크린의 가로해상도
  
@@ -76,14 +76,13 @@ function Header() {
         window.removeEventListener('resize', handleResize); // cleanup
       }
     }, []);
-
-   
-  
-     
-  
-  
   
   return (
+    <>
+    <div id="skipNav">
+    <a href="#content">본문 바로가기</a>
+    <a href="#nav">글로벌 네비게이션 바로가기</a>
+    </div>
     <header
       id="headerArea"
       style={{
@@ -95,24 +94,17 @@ function Header() {
       <div className={`header_inner ${scroll > smh - 150 ? "ch" : ""}`}>
         <h1>
           <NavLink to="/">
-            <img src={img1} alt="기상청 로고" />
+            <img src={img1} alt="기상청 로고" /> <span className='hidden'>기상청</span>
           </NavLink>
         </h1>
-          <nav className={isSwitched ? "show" : "hide"} onClick={navCloseHandler}>
+          <nav id='gnb' className={isSwitched ? "show" : "hide"} onClick={navCloseHandler}>
+            <h2 className='hidden'>글로벌네비게이션</h2>
             <ul>
-              <li>
-                <NavLink to="/About">기관소개</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Position">주요업무</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Data">기상정보</NavLink>
-              </li>
-              <li>
-                <NavLink to="/Notice">기상연구</NavLink>
-              </li>
-              <li>
+              <li><h3><NavLink to="/About">기관소개</NavLink></h3></li>
+              <li><h3><NavLink to="/Position">주요업무</NavLink></h3></li>
+              <li><h3><NavLink to="/Data">기상정보</NavLink></h3></li>
+              <li><h3><NavLink to="/Notice">기상연구</NavLink></h3></li>
+              <li> <h3>
                 <NavLink
                   to="/Letter"
                   className={({ isActive, isPending, isTransitioning }) => {
@@ -123,10 +115,10 @@ function Header() {
                     return isLetterRoute ? "active" : "";
                   }}>
                   국민참여
-                </NavLink>
+                </NavLink> </h3>
               </li>
-              <li>
-                <NavLink to="/Service">행동요령</NavLink>
+              <li><h3>
+                <NavLink to="/Service">행동요령</NavLink></h3>
               </li>
             </ul>
           </nav>
@@ -136,6 +128,7 @@ function Header() {
         <span></span>
       </button>
     </header>
+    </>
   );
 }
 

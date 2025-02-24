@@ -44,6 +44,8 @@ function About2() {
 
 
         <div className='timeBox'>
+            <h5></h5>
+            
             <div className='timeline'>
                 <BsSnow2 className='icoSnow'/><span></span>
                 <BsSnow2 className='icoSnow'/><span></span>

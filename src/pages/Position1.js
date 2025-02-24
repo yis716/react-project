@@ -82,11 +82,15 @@ function Position1() {
                             등표에 자동기상관측장비를 설치하여 풍향, 풍속, 기압, 기온 관측한 자료를
                             위성으로 전송하는 장비로 수도권기상청에서는 서수도에 1개소를 운영하고 있다.
                         </span>
-                        <div className='conInimg'>
-                            <img src={require("../images/position/po_img6.jpg")} alt="" />
-                            <img src={require("../images/position/po_img7.jpg")} alt="" />
-                            <img src={require("../images/position/po_img8.jpg")} alt="" />
-                            <img src={require("../images/position/po_img9.jpg")} alt="" />
+                        <div className='conBox'> 
+                            <div className='conInimg'>
+                                <img src={require("../images/position/po_img6.jpg")} alt="" />
+                                <img src={require("../images/position/po_img7.jpg")} alt="" />
+                            </div>
+                            <div className='conInimg'>
+                                <img src={require("../images/position/po_img8.jpg")} alt="" />
+                                <img src={require("../images/position/po_img9.jpg")} alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className='con4In'>
@@ -95,11 +99,6 @@ function Position1() {
                             인천·경기 해상에서 선박의 길목이나 안개다발해역에서의 주요 등대, 등표 등 해양구조물에
                             시정계와 영상촬영장비를 설치하여 해상정보를 수집 운영하고 있다.
                         </span>
-                        <div className='conInimg'>
-                            {/* <img src="" alt="">
-                            <img src="" alt="">
-                            <img src="" alt=""> */}
-                        </div>
                     </div>
                 </div>
                 <div className='eqCon5 con'>
@@ -112,7 +111,6 @@ function Position1() {
                     <div className='conInimg'>
                             <img src={require("../images/position/po_img10.jpg")} alt="" />
                             <img src={require("../images/position/po_img11.jpg")} alt="" />
-                            <img src={require("../images/position/po_img12.jpg")} alt="" />
                     </div>
                 </div>
                 <div className='eqCon6 con'>
@@ -122,12 +120,6 @@ function Position1() {
                         폭염·해무 등 집중관측 및 비교관측 등을 위해 기상관측차량을 도입(`21.1.) 운영하고 있다.
                     </p>
                     <p>기상관측차량은 차량에 기상관측장비를 부착하여 지상관측, 고층관측, 노면관측 등 현장관측을 통한 현장브리핑 지원을 통해 수도권의 위험기상 감시를 선도적으로 수행하고자 한다.</p>
-                    <div className='conInimg'>
-                        {/* <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt="">
-                        <img src="" alt=""> */}
-                    </div>
                 </div>
             </div>
             <p className='bottom'>담당관리 : 수도권기상청</p>

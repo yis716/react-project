@@ -3,20 +3,90 @@ ul{ list-style: none; }
 a{ text-decoration: none; }
 
 .weather{width:90%; margin: 50px auto;}
-.weather h3{font-size: 3rem; text-align: left; padding-top: 200px;}
-.weather p{width: 70%; text-align: center; margin: 0 auto; font-size: 1rem; line-height: 2rem; padding: 50px 0;  }
- 
-.serch_box{margin: 20px auto 50px;}
+.weather>h3{font-size: 3rem; font-weight: 700; text-align: left; padding: 250px 0 50px ; border-bottom: 1px solid #555;}
+.weather .re_tit_img p{width: 70%; text-align: center; text-shadow: 0px 0px 3px rgba(0, 0, 0, .5); margin: 0 auto; font-size: 1rem; line-height: 2rem; padding: 100px 0;}
+.weather>p{position: relative; width: 30%; font-weight: 500; text-align: center; margin: 0 auto; font-size: 1.3rem; padding: 100px 0 0 0;}
+.weather>p::before{content: ''; width: 75%; height: 13px; 
+ position: absolute; left: 50%; bottom: 0; translate:-50% ; z-index: -1; background: rgba(87, 183, 242, .2);}
+.weather .re_tit_img{width:100%; 
+    height: 300px;
+    background: url(../images/notice/pexels-jonathanborba-3259567\ 1.png) no-repeat center center;
+    background-attachment: fixed;
+    margin: 70px auto;}
+.output_box h3{font-size: 2rem; text-align: center;padding: 70px 0; transition: all .5s;}
+.output_box:hover h3{color: #57B7F2; font-size: 2.3rem;}
+.output_box{padding-bottom: 80px;}
+
+
+.weather .chart-container p{font-size: 1.2rem; font-weight: 500; padding: 30px 0; text-align: center;}
+  
+
+.serch_box{width: 80%; margin: 150px auto 0;}
+
 .weather .serch_box form{display: flex; gap: 20px; padding: 10px 0; justify-content: center;align-items: center; border-bottom: 1px solid #555;}
 .weather .serch_box label{font-size: 18px;}
-.weather .serch_box input{width: 40%; font-size: 1.2rem; padding:5px 10px; ; border: 0; outline: none;}
-.weather .serch_box button{ padding: 5px;font-size: 1.5rem; background-color:transparent; border: 0; color:#57B7F2;cursor: pointer;}
+.weather .serch_box input{width: 40%; font-size: 1.1rem; padding:5px 10px; ; border: 0; outline: none;}
+.weather .serch_box button{ padding: 5px;font-size: 1.5rem; background-color:transparent; border: 0; color:#333;cursor: pointer;}
 .weather .serch_box .btn_all{color: #333; background-color:transparent;}
 
-.weather ul{overflow: hidden; display: flex; flex-wrap: wrap;}
-.weather li{width: 25%;text-align: center;box-sizing: border-box; padding: 10px;}
-.weather li img{width:100%;}
-.weather li dl{ margin: 15px auto;} 
-.weather li dt{font-size:16px ; font-weight: bold; margin-bottom: 10px; color:brown;}
-.weather li dd{line-height: 1.5em; font-size: .9rem;}
-.weather .message{font-size: 1.5rem; text-align: center; margin-bottom: 30px; color:darkgreen;}
+
+.weather table{width:90%; margin: 30px auto 50px;}
+.weather table th{color: #57B7F2; font-size: 1.2rem; padding: 20px 0;  text-align: center; }
+.weather table td{border-bottom: 1px solid #ccc; padding: 15px 0; text-align: center;}
+
+
+
+
+
+@media screen and (max-width:1350px) {
+    .weather{width:95%;}
+    .weather>p{width: 40%;}
+ 
+
+}
+
+@media screen and (max-width:1024px) {
+    .weather>h3{padding-top: 150px;}
+ 
+
+}
+@media screen and (max-width:970px) {
+    .weather .re_tit_img p {width: 90%;}
+    .weather>p{width: 50%;}
+    .weather{width:98%;}
+    .weather table td{border-left: 1px solid #ccc; border-right: 1px solid #ccc;}
+    .css-1i4xh20-MuiResponsiveChart-container{margin: 0 auto;}
+
+}
+@media screen and (max-width:768px) {
+    .weather{width:90%;}
+    .weather .serch_box input{width: 70%;}
+    .weather>p {font-size: 1.1rem;}
+    .weather .re_tit_img p {width: 95%; line-height: 1.8rem ; font-size: .9rem;}
+    .weather>h3{font-size: 2rem; padding-left: 20px;  padding-bottom: 50px;}   
+    .weather{width:100%;}
+    .css-1i4xh20-MuiResponsiveChart-container{margin: 0 auto;}
+   
+}
+
+@media screen and (max-width:640px) {
+    .css-1pw95u5-MuiResponsiveChart-container {margin: 0 auto;}
+    .weather>p{width: 80%;}
+    .weather .serch_box input{font-size: .9rem;}
+}
+@media screen and (max-width:500px) {
+    .weather>p{width: 80%;}   
+    .css-spkdrd-MuiResponsiveChart-container{margin: 0 auto;}
+    .weather .re_tit_img p{padding: 70px 0; font-size: .8rem;}
+    .output_box h3{padding: 50px 0;}
+    .weather table th {font: 1rem;}
+    .weather table td{font-size: .9rem; padding: 10px 0;}  
+    .output_box{padding-bottom: 40px;}
+        
+   
+}
+
+
+
+
+

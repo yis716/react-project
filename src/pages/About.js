@@ -18,14 +18,14 @@ function About(props) {
 
     return (
         <div className="subnav">
-            <h2>기관소개</h2>
+            <h3>기관소개</h3>
             <Box sx={{ width: "100%", typography: "body1" }}>
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
                         <TabList onChange={handleChange} aria-label="lab API tabs example">
-                        <Tab label={<h3 style={{ color: "#333" }}>기관장소개</h3>} value="1" />
-                        <Tab label={<h3 style={{ color: "#333" }}>기관연혁</h3>} value="2" />
-                        <Tab label={<h3 style={{ color: "#333" }}>오시는길</h3>} value="3" />
+                        <Tab label={<h4 style={{ color: "#333" }}>기관장소개</h4>} value="1" />
+                        <Tab label={<h4 style={{ color: "#333" }}>기관연혁</h4>} value="2" />
+                        <Tab label={<h4 style={{ color: "#333" }}>오시는길</h4>} value="3" />
                         </TabList>
                     </Box>
                     <TabPanel value="1">

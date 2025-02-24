@@ -18,14 +18,14 @@ function Letter(props) {
   };
   return (
     <div className="subnav">
-      <h2>국민참여</h2>
+      <h3>국민참여</h3>
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
             <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label={<h3 style={{ color: "#333" }}>기상민원</h3>} value="1" />
-              <Tab label={<h3 style={{ color: "#333" }}>국민행복제안</h3>} value="2" />
-              <Tab label={<h3 style={{ color: "#333" }}>민원이용안내</h3>} value="3" />
+              <Tab label={<h4 style={{ color: "#333" }}>기상민원</h4>} value="1" />
+              <Tab label={<h4 style={{ color: "#333" }}>국민행복제안</h4>} value="2" />
+              <Tab label={<h4 style={{ color: "#333" }}>민원이용안내</h4>} value="3" />
             </TabList>
           </Box>
           <TabPanel value="1">

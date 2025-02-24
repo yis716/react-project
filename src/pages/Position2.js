@@ -5,127 +5,6 @@ import '../subcss/Position.css';
 
 function Position2() {
 
-    const [weatherData, setWeatherData] = useState({});
-
-    useEffect(() => {
-        // 오늘 날짜 갖고오기
-        const date = new Date();
-        const year = date.getFullYear();
-        const month = ('0' + (date.getMonth() + 1)).slice(-2);
-        const day = ('0' + date.getDate()).slice(-2);
-        // const hour = ('0' + date.getHours()).slice(-2);
-        // const minute = ('0' + date.getMinutes()).slice(-2);
-        const initDate = `${year}${month}${day}`;
-        // console.log(initDate);
-
-        // API 호출 및 데이터 처리
-        fetch(`https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=F%2FxNYoL7HoS1DnF0VAGQlfFQTdbiGdiRVBmIlzwbzUYNjFLjEzGKdIx5oEkP5NX5vdMxEIV6h0uYfiQKyvnlQg%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${initDate}&base_time=0500&nx=55&ny=127`)
-            .then(response => response.json())
-            .then(data => {
-                const items = data.response.body.items.item;
-                const skyValues = {};
-                const popValues = {};
-                const rehValues = {};
-                const tmxValues = {};
-                const tmnValues = {};
-
-                // 데이터를 날짜별로 분류
-                for (const item of items) {
-                    const category = item.category;
-                    const fcstValue = item.fcstValue;
-                    const fcstTime = item.fcstTime;
-                    const fcstDate = item.fcstDate;
-          
-                    const datetime = fcstDate + fcstTime;
-
-                    switch (category) {
-                        case 'SKY':
-                          skyValues[datetime] = getSkyDescription(fcstValue);
-                          break;
-                        case 'POP':
-                          popValues[datetime] = fcstValue;
-                          break;
-                        case 'REH':
-                          rehValues[datetime] = fcstValue;
-                          break;
-                        case 'TMX':
-                          tmxValues[datetime] = fcstValue;
-                          break;
-                        case 'TMN':
-                          tmnValues[datetime] = fcstValue;
-                          break;
-                        default:
-                          break;
-                    }
-                
-                    // if (category === 'SKY') {
-                    //     const datetime = fcstDate + fcstTime;
-                    //     skyValues[datetime] = getSkyDescription(fcstValue);
-                    // } else if (category === 'POP') {
-                    //     const datetime = fcstDate + fcstTime;
-                    //     popValues[datetime] = fcstValue;
-                    // } else if (category === 'REH') {
-                    //     const datetime = fcstDate + fcstTime;
-                    //     rehValues[datetime] = fcstValue;
-                    // } else if (category === 'TMX') {
-                    //     const datetime = fcstDate + fcstTime;
-                    //     tmxValues[datetime] = fcstValue;
-                    // } else if (category === 'TMN') {
-                    //     const datetime = fcstDate + fcstTime;
-                    //     tmnValues[datetime] = fcstValue;
-                    // }
-                }
-
-
-                //날짜별 날씨 정보 맵핑
-                const dateInfoMap = {};
-
-                for (const datetime in skyValues) {
-                    if (datetime.endsWith("0600") || datetime.endsWith("1200") || datetime.endsWith("1800")) {
-                      const monthVal = datetime.slice(4, 6);
-                      const dayVal = datetime.slice(6, 8);
-                      const timeVal = datetime.slice(8, 10);
-          
-                      const datePart = `${monthVal}월 ${dayVal}일`;
-                      const skyInfo = `${timeVal}시 - SKY: ${skyValues[datetime]}`;
-                      const popInfo = `강수확률: ${popValues[datetime]}%`;
-                      const rehInfo = `습도: ${rehValues[datetime]}%`;
-                      const tmxInfo = `최고기온: ${tmxValues[datetime]}°C`;
-                      const tmnInfo = `최저기온: ${tmnValues[datetime]}°C`;
-
-                    if (!dateInfoMap[datePart]) {
-                        dateInfoMap[datePart] = [];
-                    }
-
-                    // dateInfoMap[datePart].push(skyInfo);
-                    // dateInfoMap[datePart].push(popInfo);
-                    // dateInfoMap[datePart].push(rehInfo);
-                    // dateInfoMap[datePart].push(tmxInfo);
-                    // dateInfoMap[datePart].push(tmnInfo);
-                    dateInfoMap[datePart].push(skyInfo, popInfo, rehInfo, tmxInfo, tmnInfo);
-
-                  }
-                }
-
-                //state로 날씨 데이터 저장.
-                setWeatherData(dateInfoMap);
-                // console.log(dateInfoMap);
-            });
-    }, []); // 빈 배열은 컴포넌트가 로드될 때 한 번만 실행
-
-    function getSkyDescription(skyValue) {
-        switch (skyValue) {
-          case "1":
-            return "맑음";
-          case "3":
-            return "구름많음";
-          case "4":
-            return "흐림";
-          default:
-            return "알 수 없음";
-        }
-    };
-
   const wideArea = [
     { name: "서울 / 인천 / 경기도", local: "서울특별시, 인천광역시(서해5도 제외) 및 경기도 지역", center: "수도권기상청" },
     { name: "서해 5도", local: "인천광역시 중 옹진군 백력동 / 대청도 / 소청도 / 연평도, 강화군 우도", center: "수도권기상청" }
@@ -173,6 +52,34 @@ function Position2() {
     { name: "서해5도", local: "인천광역시 중 옹진군 (백령도, 대청도, 소청도, 연평도, 강화군 우도)", center: "백령도(관)" }
   ];
 
+  const middleArea = [
+    { name: "서울 / 인천 / 경기도", local: "서울특별시, 인천광역시 및 경기도 지역(서해5도 제외) ", center: "수도권기상청" },
+    { name: "서해중부해상", local: "서해중부 전해상", center: "수도권기상청" },
+    { name: "서해북부해상", local: "서해북부 전해상", center: "수도권기상청" }
+  ];
+
+  const seaWideArea = [
+    { name: "서해북부해상", local: "북위 38도선 이북외 서해역", center: "수도권기상청" },
+    { name: "서해중부해상", local: "북위 36도선에서 북위 38도선까지외 서해역", center: "수도권기상청" }
+  ];
+
+  const seaLocalArea = [
+    { name: "인천 / 경기북부앞바다", local: "앞바다 중 인천광역시(강화군, 서해 5도), 경기도 김포시의 관할 해역", center: "수도권기상청" },
+    { name: "인천 / 경기남부앞바다", local: "앞바다 해역 중 인천광역시(강화군 / 서해5도 제외), 경기도 시흥시, 안산시, 평택시, 화성시의 관할 해역", center: "수도권기상청" }
+  ];
+
+  const  divisionArea = [
+    { name: "앞바다", local: "서해의 백령도 동단, 대청도 동단, 소청도 동단, 울도 서단, 궁시도 서단, 대길산도 서단, 말도 서단을 연결하는 선 안외 해역"},
+    { name: "안쪽먼바다", local: "앞바다를 제외한 해역 중 북위 38도, 동경 124도가 만나는 지점과 북위 36도, 동경 125도가 만나는 지점을 직선으로 연결한 선 안쪽 구역"},
+    { name: "바깥먼바다", local: "앞바다, 안쪽먼바다를 제외한 해역 중 바깥먼바다의 경계는 영해로부터 200해리(약 370km)까지"}
+  ];
+
+  const  specificArea = [
+    { name: "인천 / 경기북부 앞바다 중", local: "서해의 백령도 동단, 대청도 동단, 소청도 동단, 울도 서단, 궁시도 서단, 대길산도 서단, 말도 서단을 연결하는 선 안외 해역", center:"수도권기상청"},
+    { name: "안쪽먼바다", local: "앞바다를 제외한 해역 중 북위 38도, 동경 124도가 만나는 지점과 북위 36도, 동경 125도가 만나는 지점을 직선으로 연결한 선 안쪽 구역", center:"수도권기상청"},
+    { name: "바깥먼바다", local: "앞바다, 안쪽먼바다를 제외한 해역 중 바깥먼바다의 경계는 영해로부터 200해리(약 370km)까지", center:"수도권기상청"}
+  ];
+
     return ( 
       <div className='position'>
         <h3 className = 'hidden'> 예보 업무 </h3> 
@@ -181,66 +88,153 @@ function Position2() {
             <p> 관할지역 기상예보(동네예보, 중기예보) </p>
             <p>관할지역 기상특보 및 방재 </p>
         </div> 
-        <div className = 'outBox'>
-          <p> 오늘의 날씨 </p>
-          <div className = 'dateInfo con'> 
-            {/* 날씨 정보를 여기에 렌더링할 것입니다. */} 
-            <ul className='infoIneer'>
-                {Object.keys(weatherData).map(date => (
-                  <li key={date}>
-                      <p className='date'>{date}</p>
-                      <ul>
-                          {weatherData[date].map((info, index) => (
-                              <li key={index}>{info}</li>
-                          ))}
-                      </ul>
-                  </li>
-                ))}    
-            </ul> 
+        <div className="offerInner con">
+          <h4>예보 및 특보구역도</h4>
+          <div className='areaImg'>
+            <img src={require("../images/position/area.jpg")} alt="예보및특보구역도사진" />
           </div>
-          <div className="offerInner con">
-            <h4>육상 광역예보 구역</h4>
-            <table className="offer">
-              <thead>
-                <tr>
-                  <th>구역명칭</th>
-                  <th>대상지역</th>
-                  <th>관할예보관서</th>
+        </div>
+        <div className="offerInner con">
+          <h4>육상 광역예보 구역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>대상지역</th>
+                <th>관할예보관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {wideArea.map((item, index) => (
+                <tr key={index.item}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {wideArea.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.local}</td>
-                    <td>{item.center}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="offerInner con">
-            <h4>육상 국지예보 구역</h4>
-            <table className="offer">
-              <thead>
-                <tr>
-                  <th>구역명칭</th>
-                  <th>대상지역</th>
-                  <th>관할예보관서</th>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="offerInner con">
+          <h4>육상 국지예보 구역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>대상지역</th>
+                <th>관할예보관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {localArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {localArea.map((item, index) => (
-                  <tr key={index}>
-                    <td>{item.name}</td>
-                    <td>{item.local}</td>
-                    <td>{item.center}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-            {/* <p className = "result"> 오늘의 날씨 </p> */}
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="offerInner con">
+          <h4>육상 중기예보 구역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>해당 지역 및 해역</th>
+                <th>관할관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {middleArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="offerInner con">
+          <h4>해상 광역예보 구역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>해당 지역 및 해역</th>
+                <th>관할관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {seaWideArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>대상지역</th>
+              </tr>
+            </thead>
+            <tbody>  
+              {divisionArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="offerInner con">
+          <h4>해상 국지예보 구역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>해당 지역 및 해역</th>
+                <th>관할관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {seaLocalArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="offerInner con">
+          <h4>특정관리해역</h4>
+          <table className="offer">
+            <thead>
+              <tr>
+                <th>구역명칭</th>
+                <th>대상지역</th>
+                <th>관할관서</th>
+              </tr>
+            </thead>
+            <tbody>
+              {specificArea.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.name}</td>
+                  <td>{item.local}</td>
+                  <td>{item.center}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <p className='bottom'>담당관리 : 수도권기상청</p>
       </div>

@@ -116,13 +116,13 @@ function Letter1() {
   return (
     <div className="container">
       <div className="LetterBox">
-        <h4>제공하는 민원서비스</h4>
+        <h5>제공하는 민원서비스</h5>
         <div className="LetterR">{LetterConList1}</div>
       </div>
 
       <div className="mail">
         <div className="mailtitle">
-          <h4>민원상담</h4>
+          <h5>민원상담</h5>
           <p>국민의 민의가 모인 고충민원에 대한 사항을 상담해드립니다.</p>
         </div>
         <div className="Econtainer">

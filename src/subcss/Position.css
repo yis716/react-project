@@ -1,20 +1,20 @@
 /* Wrapper 영역 */
-.nav{
+.position .nav{
     display: flex;
     gap: 30px;
 }
 
-.nav li a{
+.position .nav li a{
     font-size: 1.5rem;
     color: #ccc;
     padding-bottom: 10px;
     transition: all .5s ease-out;
 }
 
-.nav li:hover a{
+.position .nav li:hover a{
     color: #333;
 }
-.nav li a.active{
+.position .nav li a.active{
     color: #333;
     border-bottom: 1px solid #333;
 }
@@ -117,30 +117,37 @@
 }
 .position .conInimg img{
     border-radius: 30px;
-    width: 100%;
-    height: 300px;
     object-fit: cover;
     object-position: top;
 }
 
 /* position1영역 */
 
+.position .eqCon1 img{
+    width: 100%;
+    height: 400px;
+}
 
 /* eqCon2 영역 */
 .position .eqCon2 img{
-    width: 50%;
-    height: 600px;
+    width: 25%;
+    height: 400px;
 }
 
 /* eqCon3 영역 */
 .position .eqCon3 img{
-    width: 50%;
-    height: 650px;
+    width: 25%;
+    height: 400px;
 }
 
 /* eqCon4 영역 */
 .position .eqCon4 .con4In span{
     padding-left: 50px;
+}
+.position .conBox{
+    display: flex;
+    width: 100%;
+    gap: 20px;
 }
 .position .eqCon4 .conInimg{
     width: 100%;
@@ -148,13 +155,13 @@
     margin: 30px 0;
 }
 .position .eqCon4 .conInimg img{
-    width: 25%;
+    width: 48%;
     height: 400px;
 }
 
 /* eqCon5영역 */
 .position .eqCon5 img{
-    width: 33.33%;
+    width: 25%;
     height: 400px;
 }
 
@@ -163,31 +170,15 @@
     width: 33.33%;
     height: 400px;
 }
-
 /* position2영역 */
-.position .outBox{
-    padding: 0 0 100px;
+.position .offerInner .areaImg{
+    width: 100%;
 }
-.position .outBox > p{
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 50px;
+.position .offerInner .areaImg img{
+    width: 70%;
+    object-fit: cover;
+    object-position: center;
 }
-.position .outBox .infoIneer{
-    display: flex;
-    justify-content: space-between;
-}
-.position .outBox .infoIneer li{
-    margin-bottom: 10px;
-}
-/* .position .outBox .infoIneer li:nth-of-type(4){
-    display: flex;
-} */
-.position .outBox .infoIneer .date{
-    font-size: 1.1rem;
-    font-weight: 500;
-}
-
 /* position3영역 */
 .position .offerInner .offerHead{
     position: relative;
@@ -209,11 +200,11 @@
     margin: 30px 0 50px;
 }
 
-.offerInner .offer p {
+.position .offerInner .offer p {
     text-align: center;
 }
 
-.offerInner .offer {
+.position .offerInner .offer {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
@@ -229,24 +220,44 @@
 .position .offerInner .offer th {
     text-align: center;
     background-color: #dfdfdf;
-    tab-size: 1.1rem;
-    background-color: #f2f2f2;
-    font-weight: 500;
+}
+.position .offerInner .offer .tdBox{
+    transform: translateY(20px);
+}
+.position .midTxt a span{
+    transition: color .3s;
+}
+.position .midTxt a:hover span{
+    color: #57B7F2;
 }
 
-.position .offerInner .midCon1{
-   
+@media screen and (max-width: 1280px){
+    .position .eqCon2 img,
+    .position .eqCon3 img,
+    .position .eqCon5 img{
+        width: 40%;
+    }
 }
 
-.position .offerInner .midCon2 {
-  
-}
-.position .offerInner .midCon3 {
-   
-}
-.position .offerInner .midCon4 {
-   
-}
-.position .offerInner .midCon5 {
-  
+@media screen and (max-width: 768px){
+    .position .conBox{
+        flex-wrap: wrap;
+        margin: 30px 0;
+    }
+    .position .eqCon4 .conInimg{
+        justify-content: space-between;
+        margin: 0;
+    }
+    .position .conInimg{
+        justify-content: space-between;
+        gap: 20px;
+    }
+    .position .eqCon2 img,
+    .position .eqCon3 img,
+    .position .eqCon5 img{
+        width: 48%;
+    }
+    .position .offerInner .areaImg img{
+        width: 100%;
+    }
 }
