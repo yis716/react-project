@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from '../subcss/Service3.module.css';
+// import img1 from "../images/service/1.jpg";
 
 function Service3() {
     const subTabs = [
@@ -17,12 +18,13 @@ function Service3() {
                             <li>외출 시에는 필요한 보호안경, 마스크, 긴소매 의복, 위생용기 등을 준비합니다.</li>
                             <li>노약자, 호흡기 질환자의 경우는 실외활동을 자제합니다.</li>
                         </ul>
-                        {/* <div>
-                            <img>가정에서 창문 사진</img>
-                            <img>외출시 마스크 사진</img>
-                            <img>노약자와 호흡기 환자 사진</img>
-                        </div> */}
                     </div>
+
+                    {/* <div className='imgContainer'>
+                            <img src={require("../images/service/1.jpg")} alt="" />
+                            <img src={require("../images/service/2.jpg")} alt="" />
+                            <img src={require("../images/service/3.jpg")} alt="" />
+                    </div> */}
                     <div className={styles.infoBox}>
                         <ul>
                             <li>학교 및 교육기관에서는 교직원과 함께 한파 대비 교육을 실시합니다.</li>
@@ -30,11 +32,12 @@ function Service3() {
                             <li>학생들의 비상연락망을 사전에 점검하고, 연락 체계를 유지해 둡니다.</li>
                             <li>학생과 학부모를 대상으로 황사 대비 행동요령을 지도·홍보합니다.</li>
                         </ul>
-                        {/* <div>
-                            <img>학생과 교직원의 토의 사진</img>
-                            <img>축사 혹은 비닐하우스 환기 사진</img>
-                        </div> */}
+                        
                     </div>
+                    {/* <div className='imgContainer'>
+                        <img src={require("../images/service/4.jpg")} alt="" />
+                        <img src={require("../images/service/5.jpg")} alt="" />
+                    </div>  */}
                     <div className={styles.infoBox}>
                         <ul>
                             <li>축사·시설원예 등 농가에서는 방목장에 있는 가축을 대피시킬 수 있도록 준비합니다.</li>
@@ -65,7 +68,7 @@ function Service3() {
                     <div className={styles.infoBox}>
                         <ul>
                             <span>학교 등 교육기관에서는</span>
-                            <li>어린이집과 각급학교의 실외활동 금지하고 수업 단축 또는 휴업을 합니다. \</li>
+                            <li>어린이집과 각급학교의 실외활동 금지하고 수업 단축 또는 휴업을 합니다. </li>
                             <li>실외학습, 운동경기 등을 중지하거나 연기합니다.</li>
                         </ul>
                     </div>
@@ -199,20 +202,6 @@ function Service3() {
                                 </td>
                             </tr>
                             <tr>
-                                <td>정의</td>
-                                <td>
-                                    <ul>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>
-                                </td>
-                                <td>
-                                   <ul>
-                                        <li></li>
-                                   </ul>
-                                </td>
-                            </tr>
-                            <tr>
                                 <td>영향</td>
                                 <td>
                                     <ul>
@@ -268,7 +257,7 @@ function Service3() {
     };
 
     return (
-        <div className={styles.service1Container}>
+        <div className={styles.Service3Container}>
             {/* <h4>한파 행동요령</h4> */}
             <ul className={styles.subTabMenu}>
                 {subTabs.map((subItem, index) => (

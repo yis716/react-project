@@ -11,29 +11,43 @@ function Service2() {
                         <p>폭염은 열사병, 열경련 등의 온열질환을 유발할 수 있으며, 심하면 사망에 이르게 됩니다. 뿐만 아니라, 가축·수산물 폐사 등의 재산피해와 여름철 전력 급증 등으로 생활의 불편을 초래하기도 합니다. 더위가 잦은 여름철에는 다음 사항을 숙지하여 피해를 사전에 예방할 수 있도록 미리 준비합니다.</p>
                     </div>
                     <div className={styles.infoBox}>
-                      <div className={styles.dex1}>
-                        <span>01</span>
-                        <div>기상 정보 확인</div>
-                        <p>여름철에는 TV, 라디오, 인터넷 등을 통해 무더위 관련  기상
-                        상황을 수시로 확인하고, 주변 사람들과 정보를 공유합니다.</p>
-                      </div>
-                      <div className={styles.dex2}>
-                        <span>02</span>
-                        <div>온열 질환 대비</div>
-                        <p>열사병 등 온열질환의 증상과 가까운 병원 연락처를 가족이나 
-                        이웃과 함께 사전에 파악하고, 대처 방법을 숙지합니다.</p>
-                      </div>
-                      <div className={styles.dex3}>
-                        <span>03</span>
-                        <div>필수 용품 준비</div>
-                        <ul>
-                            <li>에어컨, 선풍기 등의 냉방 기기를 사전에 점검합니다.</li>
-                            <li>창문에 커튼이나 필름 등을 설치하여 직사광선을 차단합니다.</li>
-                            <li>외출 시를 대비하여 넓은 모자, 햇빛 가리개, 선크림 등을 준비합니다.</li>
-                            <li>정전에 대비하여 손전등, 비상 식음료, 부채, 휴대용 라디오 등을 미리 확인합니다.</li>
-                        </ul>
-                      </div>
-                      <div className={styles.dex4}>
+                    <div className={styles.infoItem}>
+                    <div className={styles.infoNumber}>01</div>
+                    <div className={styles.infoTitle}>기상 정보 확인</div>
+                        <div className={styles.infoDescription}>
+                            여름철에는 TV, 라디오, 인터넷 등을 통해 무더위 관련 기상 상황을 수시로 확인하고, 주변 사람들과 정보를 공유합니다.
+                        </div>
+                    </div>
+
+                    <div className={styles.infoItem}>
+                        <div className={styles.infoNumber}>02</div>
+                        <div className={styles.infoTitle}>온열질환 대비</div>
+                        <div className={styles.infoDescription}>
+                        열사병 등 온열질환의 증상과 가까운 병원 연락처를 가족이나 이웃과 함께 사전에 파악하고, 대처 방법을 숙지합니다.
+                        </div>
+                    </div>
+
+                    <div className={styles.infoItem}>
+                        <div className={styles.infoNumber}>03</div>
+                        <div className={styles.infoTitle}>필수 용품 준비</div>
+                        <div className={styles.infoDescription}>
+                            에어컨, 선풍기 등의 냉방 기기를 사전에 점검합니다. <br/>
+                            창문에 커튼이나 필름 등을 설치하여 직사광선을 차단합니다.<br/>
+                            외출 시를 대비하여 넓은 모자, 햇빛 가리개, 선크림 등을 준비합니다.<br/>
+                            정전에 대비하여 손전등, 비상 식음료, 부채, 휴대용 라디오 등을 미리 확인합니다.
+                        </div>
+                    </div>
+                    <div className={styles.infoItem}>
+                        <div className={styles.infoNumber}>04</div>
+                        <div className={styles.infoTitle}>안전 수칙 숙지</div>
+                        <div className={styles.infoDescription}>
+                            냉방기기 사용 시 실내·외 온도 차를 5℃ 내외로 유지하여 냉방병을 예방합니다. <br/>
+                            오후 2~5시 사이에는 실외 작업을 자제합니다.<br/>
+                            카페인이 들어간 음료나 주류는 피하고, 생수나 이온음료를 마십니다.<br/>
+                            음식이 쉽게 상할 수 있으므로 외부에 오랫동안 방치된 음식은 섭취하지 않습니다.
+                        </div>
+                    </div>
+                      {/* <div className={styles.dex4}>
                         <span>04</span>
                         <div>안전 수칙 숙지</div>
                         <ul>
@@ -42,7 +56,7 @@ function Service2() {
                             <li>오후 2시에서 5시 사이에는 실외 작업을 자제합니다.</li>
                             <li>음식이 쉽게 상할 수 있으므로 외부에 오랫동안 방치된 음식은 섭취하지 않습니다.</li>
                         </ul>
-                      </div>
+                      </div> */}
                     </div>
                 </div>
             )},
@@ -53,44 +67,51 @@ function Service2() {
                         <h5>폭염발생 시 행동요령</h5>
                         <p>TV, 라디오, 인터넷 등에서 폭염이 예보된 때에는 최대한 야외활동을 자제하고 주변의 독거노인 등 건강이 염려되는 분들의 안부를 살펴봅니다.</p>
                     </div>
-                    <div className={[styles.infoBox1, styles.box].join(" ")}>
-                        <div className={styles.small}>
-                            <div>가정에서</div>
-                            <ul>
-                                <li>야외 활동을 최대한 자제하고, 부득이한 경우 넓은 모자와 가벼운 옷차림을 하며 물병을 휴대합니다.</li>
-                                <li>냉방이 되지 않는 실내에서는 햇볕을 가리고 맞바람이 불도록 환기합니다.</li>
-                                <li>창문이 닫힌 자동차 안에 노약자나 어린이를 홀로 남겨두지 않습니다</li>
-                                <li>거동이 불편한 노인이나 환자를 남겨두고 장시간 외출할 경우, 친인척이나 이웃에게 부탁하고 수시로 안부를 확인합니다.</li>
-                            </ul>
+                    <div className={styles.infoBoxContainer}>
+                        <div className={[styles.infoBox1, styles.box].join(" ")}>
+                            <div className={styles.small}>
+                                <div>가정에서</div>
+                                <ul>
+                                    <li>야외 활동을 최대한 자제하고, 부득이한 경우 넓은 모자와 가벼운 옷차림을 하며 물병을 휴대합니다.</li>
+                                    <li>냉방이 되지 않는 실내에서는 햇볕을 가리고 맞바람이 불도록 환기합니다.</li>
+                                    <li>창문이 닫힌 자동차 안에 노약자나 어린이를 홀로 남겨두지 않습니다</li>
+                                    <li>거동이 불편한 노인이나 환자를 남겨두고 장시간 외출할 경우, 친인척이나 이웃에게 부탁하고 수시로 안부를 확인합니다.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className={[styles.infoBox2, styles.box].join(" ")}>
-                        <div className={styles.small}>
-                            <div>회사에서</div>
-                            <li>휴식 시간은 짧게 자주 가지며, 야외 행사나 스포츠 경기는 자제합니다.</li>
-                            <li>편한 복장으로 출근하여 체온을 낮추도록 노력합니다.</li>
-                            <li>건설 현장 등 실외 작업장에서는 '물, 그늘, 휴식'의 폭염 안전 수칙을 준수하고, 특히 오후 2~5시에는 '무더위 휴식 시간제'를 적극 시행합니다.</li>
+                        <div className={[styles.infoBox2, styles.box].join(" ")}>
+                            <div className={styles.small}>
+                                <div>회사에서</div>
+                                <ul>
+                                    <li>휴식 시간은 짧게 자주 가지며, 야외 행사나 스포츠 경기는 자제합니다.</li>
+                                    <li>편한 복장으로 출근하여 체온을 낮추도록 노력합니다.</li>
+                                    <li>건설 현장 등 실외 작업장에서는 '물, 그늘, 휴식'의 폭염 안전 수칙을 준수하고, 특히 오후 2~5시에는 '무더위 휴식 시간제'를 적극 시행합니다.</li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div className={[styles.infoBox3, styles.box].join(" ")}>
-                        <div className={styles.small}>
-                            <div>학교에서</div>
-                            <li>에어컨 등 냉방 장치 운영이 곤란한 경우 단축 수업이나 휴교 등 학사 일정을 조정하고, 식중독 사고가 발생하지 않도록 주의합니다.</li>
-                            <li>냉방이 되지 않는 실내에서는 햇볕이 들어오지 않도록 하고, 환기가 잘 되도록 선풍기를 켜고 창문이나 출입문을 열어둡니다.</li>
-                            <li>운동장에서의 체육 활동 및 소풍 등 각종 야외 활동을 자제합니다.</li>
+                        <div className={[styles.infoBox3, styles.box].join(" ")}>
+                            <div className={styles.small}>
+                                <div>학교에서</div>
+                                <ul>
+                                    <li>에어컨 등 냉방 장치 운영이 곤란한 경우 단축 수업이나 휴교 등 학사 일정을 조정하고, 식중독 사고가 발생하지 않도록 주의합니다.</li>
+                                    <li>냉방이 되지 않는 실내에서는 햇볕이 들어오지 않도록 하고, 환기가 잘 되도록 선풍기를 켜고 창문이나 출입문을 열어둡니다.</li>
+                                    <li>운동장에서의 체육 활동 및 소풍 등 각종 야외 활동을 자제합니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className={[styles.infoBox4, styles.box].join(" ")}>
+                            <div className={styles.small}>
+                                <div>축사에서</div>
+                                <ul>
+                                    <li>축사 창문을 개방하고 지속적인 환기를 실시하며, 적정 사육 밀도를 유지합니다.</li>
+                                    <li>비닐하우스나 축사 천장 등에 물 분무 장치를 설치하여 복사열을 낮춥니다.</li>
+                                    <li>양식 어류는 꾸준히 관찰하고, 얼음을 넣는 등 수온 상승을 억제합니다.</li>
+                                    <li>가축·어류 폐사 시 신속하게 방역 기관에 신고하고 조치에 따릅니다.</li>
+                                </ul>    
+                            </div>
+                        </div>
                         
-                        </div>
                     </div>
-                    <div className={[styles.infoBox4, styles.box].join(" ")}>
-                        <div className={styles.small}>
-                            <div>축사에서</div>
-                            <li>축사 창문을 개방하고 지속적인 환기를 실시하며, 적정 사육 밀도를 유지합니다.</li>
-                            <li>비닐하우스나 축사 천장 등에 물 분무 장치를 설치하여 복사열을 낮춥니다.</li>
-                            <li>양식 어류는 꾸준히 관찰하고, 얼음을 넣는 등 수온 상승을 억제합니다.</li>
-                            <li>가축·어류 폐사 시 신속하게 방역 기관에 신고하고 조치에 따릅니다.</li>
-                        </div>
-                    </div>
-                    
                 </div>
             )},
             { name: "특보", 
@@ -243,7 +264,7 @@ function Service2() {
 
 
     return (
-        <div className={styles.service1Container}>
+        <div className={styles.service2Container}>
             {/* <h4>한파 행동요령</h4> */}
             <ul className={styles.subTabMenu}>
                 {subTabs.map((subItem, index) => (

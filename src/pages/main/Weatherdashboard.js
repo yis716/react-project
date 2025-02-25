@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../../css/Weatherdashboard.css'
+import SaturdayIcon from '../../images/main/sec1-weather.jpg'
 
 const WeatherCard = ({ day, icon, minTemp, maxTemp, bgColor }) => (
     <div className={`weather-card ${bgColor}`}>
@@ -54,6 +55,25 @@ const WeatherCard = ({ day, icon, minTemp, maxTemp, bgColor }) => (
                     bgColor={index === 5 ? "gray" : index === 6 ? "red" : "blue"}
                 />
             ))}
+
+            {/* ✅ 토요일 추가 (고정된 값) */}
+            <WeatherCard
+                day="토요일"
+                icon={null}
+                minTemp={3}
+                maxTemp={7}
+                bgColor="gray"
+                customIcon={SaturdayIcon}
+            />
+
+            {/* ✅ 일요일 추가 (고정된 값) */}
+            <WeatherCard
+                day="일요일"
+                icon={null}
+                minTemp={1}
+                maxTemp={6}
+                bgColor="red"
+            />
         </div>
     );
 };

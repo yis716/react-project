@@ -1,78 +1,168 @@
-/* 
-
-*{margin: 0; padding: 0;}
-
-a{color: #333; display: block; text-decoration: none;padding: 10px; text-align: center;}
-
-section{margin: 300px auto; width: 80%; }
-
-.Service .tabContainer{width: 96%; margin: 250px auto;border: 1px solid #ccc;
-   box-sizing: border-box; padding: 10px; margin-top: 300px; position: relative;}
-
-.tabMenu{display: flex; list-style: none; gap:15px; margin-bottom: 20px;
-   ;}
-
-.tabMenu li{cursor: pointer;}
-.active{color: #fff; font-weight: bold;background: skyblue; border-radius: 10px;}
-.tabContent{text-align: justify; line-height: 1.5rem;}
-
-
-.subTabMenu{width: 10%; position: absolute; left: 50px;}
-
-.tabContent{width: 80%; margin: 0px auto;} */
-
-.service1Container {
+.service2Container {
    /* position: relative; */
    overflow: hidden;
    margin: 100px 0;
 }
-
-.subTabMenu {
-   /* position: absolute; */
-    width: 10%;
-    text-align: center;
-    /* left: -80px; */
-    float: left;
-    top: 30px;
-    /* border-bottom: 1px solid #333; */
+.service2Container::after{
+   content: "";
+   display: table;
+   clear: both;
 }
 
-.subTabMenu li {
-   margin-top: 10px;
-   border-bottom: 1px solid #000;
-}
-  
-.subTabMenu button {
-  font-size: 1.3rem;
-  background: none;
-}
-
-.subTabMenu .active {
+ /* 탭 메뉴 */
+ .subTabMenu {
+   width: 20%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 12px;
+   padding: 20px;
+   border-right: 2px solid #ddd;
+   float: left;
+   flex: 1;
+   max-width: 20%;
+ }
+ 
+ .subTabMenu li {
+   width: 100%;
+   list-style: none;
+ }
+ 
+ .subTabMenu button {
+   width: 100%;
+   padding: 12px 16px;
+   font-size: 1.2rem;
+   font-weight: 500;
+   background: #f5f5f5;
+   border: none;
+   border-radius: 8px;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+ }
+ 
+ .subTabMenu button:hover {
+   background: #e0e0e0;
+ }
+ 
+ .subTabMenu .active {
+   background: #007bff;
+   color: white;
    font-weight: bold;
-   
-}
+ }
+ 
 
 .tabContent {
-   width: 80%;
+   width: 76%;
   float: right;
+  margin-left: 1%;
 }
 
 
-.prepHeader{width: 90%; overflow: hidden;}
-.prepHeader h5{width: 8%; 
-   font-size: 1.3rem;
-   text-align: center;
-   background: skyblue;
-   float: left;
-   padding: 5px;
+.prepHeader{ overflow: hidden; display: flex; align-items: center;
+   margin: 0 50px 50px;
+}
+
+.prepHeader h5{
+   width: 29%;
+    background: #666;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px; */
 }
 .prepHeader p{
-   width: 85%;
+   width: auto;
    font-size: 1.1rem;
-   float: right;
+   margin-left: 5%;
+   flex-grow: 1;
 }
 
-.infoBox .dex1,
+.infoBox {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 20px;
+   width: 90%;
+   margin: 0 auto;
+}
+
+/* ✅ 개별 항목 (숫자, 제목, 설명 포함) */
+.infoItem {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   overflow: hidden;
+   background: white;
+   height: 150px;
+ }
+ .infoNumber {
+   width: 80px;
+   height: 80px;
+   background: #007bff; /* 기본 파란색 (변경 가능) */
+   color: white;
+   font-size: 1.4rem;
+   font-weight: bold;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 50%;
+   margin-left: 20px;
+ }
+ 
+ /* ✅ 개별 항목 별 색상 지정 */
+ .infoItem:nth-child(1) .infoNumber { background: #66C1E9; }
+ .infoItem:nth-child(2) .infoNumber { background: #EAA198; }
+ .infoItem:nth-child(3) .infoNumber { background: #E190CD; }
+ .infoItem:nth-child(4) .infoNumber { background: #4EAB78; }
+
+/* ✅ 제목 영역 */
+.infoTitle {
+   font-size: 1.2rem;
+   font-weight: bold;
+   padding: 10px 15px;
+   min-width: 150px;
+   text-align: left;
+ }
+ 
+ /* ✅ 설명 박스 */
+ .infoDescription {
+   flex-grow: 1;
+   padding: 20px;
+   font-size: 1rem;
+   line-height: 1.6;
+   border-left: 2px solid #ccc;
+   background: #f9f9f9;
+ }
+
+
+/* ✅ 반응형 (작은 화면에서는 1열 정렬) */
+@media (max-width: 768px) {
+   .infoItem {
+     flex-direction: column;
+     align-items: flex-start;
+   }
+   .infoNumber {
+     margin: 10px auto;
+   }
+   .infoTitle {
+     text-align: center;
+     width: 100%;
+   }
+   .infoDescription {
+     border-left: none;
+     border-top: 2px solid #ccc;
+   }
+ }
+/* .infoBox .dex1,
 .infoBox .dex2,
 .infoBox .dex3,
 .infoBox .dex4 {width: 90%; overflow: hidden; margin: 30px 0;}
@@ -102,4 +192,78 @@ section{margin: 300px auto; width: 80%; }
 .dex1 span, .dex1 div{background: #66C1E9;}
 .dex2 span, .dex2 div{background: #EAA198;}
 .dex3 span, .dex3 div{background: #E190CD;}
-.dex4 span, .dex4 div{background: #4EAB78;}
+.dex4 span, .dex4 div{background: #4EAB78;} */
+
+/* ---------------------------
+   2×2 그리드 래퍼
+--------------------------- */
+.infoBoxContainer {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr); /* 2열로 나누기 */
+   gap: 20px; /* 박스 간격 */
+   margin-top: 20px;
+ }
+ 
+ /* 화면이 좁아지면 1열로 변경 */
+ @media (max-width: 768px) {
+   .infoBoxContainer {
+     grid-template-columns: 1fr; 
+   }
+ }
+ 
+ /* ---------------------------
+    각 박스 공통 스타일
+ --------------------------- */
+ .box {
+   background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 50px;
+ }
+ 
+ /* ---------------------------
+    .small 안의 타이틀 스타일
+ --------------------------- */
+ .small > div {
+   font-size: 1.2rem;   /* 예시 폰트 크기 */
+   font-weight: bold;
+   margin-bottom: 10px;
+   width: 20%;
+   background: skyblue;
+   border-radius: 50%;
+   padding: 50px 0;
+   text-align: center;
+ }
+
+ /* .small > div:nth-child(1) {background: pink;} */
+ 
+ /* ---------------------------
+    리스트 기본 스타일
+ --------------------------- */
+ .small ul {
+   list-style: disc; /* 일반 불릿 스타일 */
+   /* padding-left: 20px; */
+   margin-top: 30px;
+
+ }
+ 
+ .small li {
+   line-height: 1.5;
+   margin-bottom: 8px;
+ }
+ 
+
+
+.infoTable{border-top: 1px solid #000;
+   width: 100%; margin: 0 auto; text-align: center;
+   margin-bottom: 50px;
+}
+.infoTable th{border-bottom: 2px solid #d9dd9d; padding: 5px 0;
+   border-right: 2px solid #d9d9d9;}
+
+.infoTable td{border: 2px solid #d9d9d9; vertical-align: middle;
+   text-align: left; padding-left: 30px;}
+.infoTable td:nth-child(1){padding-left: 0; text-align: center; width: 5%;}
+   

@@ -22,13 +22,13 @@ function Data() {
             <S.Wrapper>
                 <S.Head>
                     <h3 className='hidden'>기상정보</h3>
-                    <S.P>기상정보 공개</S.P>
+                    <S.P>기상정보 공개 게시판</S.P>
                     <ul className='nav'>
                         <li>
-                            <NavLink to="/Data/Data1" className='link'>미세먼지 수치</NavLink>
+                            <NavLink to="/Data/Data1" className='link'>대기오염도 정보</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/Data/Data2">미세먼지 경보현황</NavLink>
+                            <NavLink to="/Data/Data2">초미세먼지 발령정보</NavLink>
                         </li>
                         <li>
                             <NavLink to="/Data/Data3">미세먼지대피소</NavLink>
@@ -38,7 +38,8 @@ function Data() {
             </S.Wrapper>
             <div className='container'>
                 <Routes>
-                    <Route exact path="/" element={<Navigate replace to="/Data/Data1" />}></Route>                    <Route path="/Data1" element={<Data1/>}></Route>
+                    <Route exact path="/" element={<Navigate replace to="/Data/Data1" />}></Route>
+                    <Route path="/Data1" element={<Data1/>}></Route>
                     <Route path="/Data2" element={<Data2/>}></Route>
                     <Route path="/Data3" element={<Data3/>}></Route>
                 </Routes>
@@ -48,7 +49,6 @@ function Data() {
   }
 
   export default Data;
-
 
 
 

@@ -20,12 +20,12 @@ function Service1() {
                     
                     </div>
                     <div className={styles.infoBox}>
+                        <div>한파 경보</div>
                         <ul>
                             <li>학교 및 교육기관에서는 교직원과 함께 한파 대비 교육을 실시합니다.</li>
                             <li>건물의 단열 상태를 점검하고 보온을 위한 단속을 강화합니다.</li>
                             <li>학생들의 실외활동을 최소화하고 따뜻한 옷을 착용하도록 지도합니다.</li>
                         </ul>
-                        <div>한파 경보</div>
                     </div>
                 </div>
             ) },
