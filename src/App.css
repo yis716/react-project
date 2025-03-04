@@ -5,8 +5,8 @@ header{width: 100%;  padding: 20px 0;
      position: fixed;left: 0; top: 0; z-index: 200; background: #fff; transition: background .5s;}
 header h1{width: 180px; height: 70px; margin: 0 auto 30px auto;}
 nav ul{display: flex; justify-content: space-evenly;}
-nav{width: 98%; font-weight: 600; margin: 0 auto; font-family: "Roboto";box-sizing: border-box;}
-nav a{font-size: 1.3rem; display: block; text-decoration: none; color: #333;}
+nav{width: 98%; margin: 0 auto; font-family: "Roboto";box-sizing: border-box;}
+nav a{font-size: 1.3rem; font-weight: 600;  display: block; text-decoration: none; color: #333;}
 .active{color: #57B7F2;}
 header button{position: absolute; right: 20px;top:30px; cursor: pointer;background: none; display: none;}
 header button .ico{ font-size: 2rem; }
@@ -87,25 +87,26 @@ footer .F_top .dropup-center button{padding: 15px 20px; display: block;font-size
     border-radius: 15px; background: #999; color: #fff; 
      border: 1px solid #ccc; cursor: pointer; transition: all .5s;}
 footer .F_top .dropup-center button span{font-size: 1.2rem;}
-footer .F_top .dropup-center ul{position: absolute;width: 100%;left:0; bottom:120px; text-align: center; 
+footer .F_top .dropup-center ul{position: absolute;width: 100%;left:0; bottom:125px; text-align: center; 
     background: #fff; border-radius: 15px;}
 footer .F_top .dropup-center ul li a{padding: 10px; font-size: 1rem; transition: all .5s;}
 footer .F_top .dropup-center ul li a:hover{background: #777; border-radius: 15px; color: #fff;}
-footer .F_top .dropup-center ul.show{display: block;}
-footer .F_top .dropup-center ul.hide{display: none;}
+footer .F_top .dropup-center ul.show{opacity: 1; transition: all .5s;}
+footer .F_top .dropup-center ul.hide{opacity: 0;  transition: all .5s;}
 
 
 
-footer .top_move{display: flex; width: 60px; height:60px;justify-content: center;align-items: center;
-    background: #57B7F2; color: #fff; font-size: 1rem; border-radius: 50%; position:fixed;
-    bottom: 80px; right: 30px; opacity: 0; transition: all .5s; z-index: 100;}
+footer .top_move{display: flex; width: 55px; height:55px;justify-content: center;align-items: center;
+    background: #57B7F2; color: #fff ; font-size: 1rem; border-radius: 50%; position:fixed;
+    bottom: 80px; right: 50px; opacity: 0; transition: all .5s; z-index: 100;}
 
 
 footer .F_bottom ul{width: 100%; display: flex; gap: 20px; padding: 20px 0;}
 footer .F_bottom span{font-size: .8rem;}
 footer .top_move.up{ opacity: 0;}
 footer .top_move.down{opacity: 1;}
-footer .top_move.down:hover{ background :url(./images/sun.png);}
+
+footer .top_move.down:hover{width: 45px; height: 45px; background: orange; box-shadow:0px 0px 20px 5px orange ;}
 footer .top_move.down:hover span{display: none;}
 
 

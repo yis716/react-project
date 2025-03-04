@@ -16,7 +16,7 @@
    flex-direction: column;
    align-items: center;
    gap: 12px;
-   padding: 20px;
+   padding: 1%;
    border-right: 2px solid #ddd;
    float: left;
    flex: 1;
@@ -59,12 +59,11 @@
 
 
 .prepHeader{ overflow: hidden; display: flex; align-items: center;
-   margin: 0 50px 50px;
+   margin: 0 0 50px;
 }
 
 .prepHeader h5{
-   width: 29%;
-    background: #666;
+   width: 30%;
     color: black;
     font-size: 1.2rem;
     font-weight: bold;
@@ -143,58 +142,7 @@
    background: #f9f9f9;
  }
 
-
-/* ✅ 반응형 (작은 화면에서는 1열 정렬) */
-@media (max-width: 768px) {
-   .infoItem {
-     flex-direction: column;
-     align-items: flex-start;
-   }
-   .infoNumber {
-     margin: 10px auto;
-   }
-   .infoTitle {
-     text-align: center;
-     width: 100%;
-   }
-   .infoDescription {
-     border-left: none;
-     border-top: 2px solid #ccc;
-   }
- }
-/* .infoBox .dex1,
-.infoBox .dex2,
-.infoBox .dex3,
-.infoBox .dex4 {width: 90%; overflow: hidden; margin: 30px 0;}
-
-.dex1 span, 
-.dex2 span, 
-.dex3 span,
-.dex4 span {border-radius: 50%;
-   float: left;
-   margin-top: 3%;
-   padding: 5px; box-sizing: border-box;}
-.dex1 div, 
-.dex2 div, 
-.dex3 div,
-.dex4 div {width: 15%; height: 120px; background: #66C1E9; float: left;
-   vertical-align: middle; align-items: center; text-align: center;
-   margin-left: 2%;}
-.dex1 p, 
-.dex2 p, 
-.dex3 ul,
-.dex4 ul {width: 80%; height: 100px; border: 1px solid #000;
-   border-left: none; margin-top: 10px; float: right;
-   border-radius: 0 30px 30px 0;}
-
-
-
-.dex1 span, .dex1 div{background: #66C1E9;}
-.dex2 span, .dex2 div{background: #EAA198;}
-.dex3 span, .dex3 div{background: #E190CD;}
-.dex4 span, .dex4 div{background: #4EAB78;} */
-
-/* ---------------------------
+ /* ---------------------------
    2×2 그리드 래퍼
 --------------------------- */
 .infoBoxContainer {
@@ -236,8 +184,6 @@
    padding: 50px 0;
    text-align: center;
  }
-
- /* .small > div:nth-child(1) {background: pink;} */
  
  /* ---------------------------
     리스트 기본 스타일
@@ -267,3 +213,43 @@
    text-align: left; padding-left: 30px;}
 .infoTable td:nth-child(1){padding-left: 0; text-align: center; width: 5%;}
    
+
+/* ============================= */
+/* 📌 1280px 이하 반응형 스타일 */
+/* ============================= */
+
+@media (max-width:1280px) {
+  .prepHeader h5{width: 55%;}
+
+  .infoDescription{width: 50px;}
+  .infoBoxContainer{margin-top: 0;}
+  .small > div {width: 30%;}
+
+  .infoTable td{ padding: 20px;}
+ .infoTable td:nth-child(1){  width: 15%; padding: 0px;}
+}
+
+
+@media (max-width: 768px) {
+
+  .service2Container{clear: both;
+  }
+  
+  /* 탭 메뉴 */
+  .subTabMenu{clear: both; width: 100%;
+    flex-direction:row; margin-bottom: 30px;
+    border-bottom: 2px solid #ddd; box-sizing: border-box;
+    border-right: none; max-width: none;
+  }
+  
+  .tabContent{clear: both; width: 100%;}
+  
+  .prepHeader{margin: 0;}
+  .prepHeader h5 {background: none; border-bottom: 2px solid #ddd;}
+  .small > div{background: none; padding: 0; border-bottom: 2px solid #ddd;
+    border-radius: 0%;}
+}
+
+@media (max-width: 640px) {
+
+}

@@ -49,17 +49,12 @@
 }
 
 /* 상단 헤더 */
-.prepHeader {
-  width: 100%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  margin: 5%;
+.prepHeader{ overflow: hidden; display: flex; align-items: center;
+  margin: 0 0 50px;
 }
 
 .prepHeader h5 {
   width: 29%;
-  background: #666;
   color: black;
   font-size: 1.2rem;
   font-weight: bold;
@@ -127,4 +122,61 @@
 .accordionContent li {
   margin-bottom: 6px;
   line-height: 1.4;
+}
+
+
+/* ============================= */
+/* 📌 1280px 이하 반응형 스타일 */
+/* ============================= */
+
+@media (max-width:1280px) {
+
+  .infoDescription{width: 50px;}
+  .infoBoxContainer{margin-top: 0;}
+  .small > div {width: 30%;}
+
+  .infoTable td{ padding: 20px;}
+ .infoTable td:nth-child(1){  width: 15%; padding: 0px;}
+ .tabContent div{margin-left: 10px;}
+}
+
+@media (max-width:1024px) {
+  .tabContent{width: 75%; float: right; }
+  .prepHeader{margin: 0;}
+  .prepHeader h5{background: none;}
+
+  /* .infoDescription{width: 50px;}
+  .infoBoxContainer{margin-top: 0;}
+  .small > div {width: 30%;}
+
+  .infoTable td{ padding: 20px;}
+ .infoTable td:nth-child(1){  width: 15%; padding: 0px;}
+ .tabContent div{margin-left: 10px;} */
+}
+
+
+@media (max-width: 768px) {
+    
+  .service2Container{clear: both;
+  }
+  
+  /* 탭 메뉴 */
+  .subTabMenu{clear: both; width: 100%;
+    flex-direction:row; margin-bottom: 30px;
+    border-bottom: 2px solid #ddd; box-sizing: border-box;
+    border-right: none; max-width: none;
+  }
+  
+  .tabContent{clear: both; width: 100%;}
+  
+  .prepHeader{margin: 0;}
+  .prepHeader h5 {background: none; width: 30%;}
+  .small > div{background: none; padding: 0; border-bottom: 2px solid #ddd;
+    border-radius: 0%; }
+  
+}
+
+@media (max-width: 640px) {
+  .prepHeader h5{width: 45%;}
+
 }

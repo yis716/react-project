@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import '../../css/Section4.css';
 import styles from '../../css/style.module.css'
 
-
   
 function Section4() {
+
+
     const data = [
       {
         id: 0,
@@ -67,7 +68,7 @@ function Section4() {
     }}
       >
         {/* <img className='backImg' src={ require('../../images/main/sec4-img1.jpg')} alt=' /> */}
-          <div>
+          <div data-aos="fade-up">
             <p>국민의 안전을 지키기 위한</p>
             <h3>국민 행동 요령</h3>
             
@@ -100,7 +101,9 @@ function Section4() {
           ))} 
        </div> */}
 
-       <div className={styles.tabContent}>
+       <div className={styles.tabContent} data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
         {selectedItem && (
           <>
             <h4 className={styles.heading}>{selectedItem.heading}</h4> {/* 제목 부분 (굵기 조절 가능) */}

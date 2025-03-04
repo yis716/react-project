@@ -7,7 +7,8 @@ function Service2() {
             content: (
                 <div>
                     <div className={styles.prepHeader}>
-                        <h5>평상시 행동요령</h5>
+                        <h5>평상시 <br/>
+                            행동요령</h5>
                         <p>폭염은 열사병, 열경련 등의 온열질환을 유발할 수 있으며, 심하면 사망에 이르게 됩니다. 뿐만 아니라, 가축·수산물 폐사 등의 재산피해와 여름철 전력 급증 등으로 생활의 불편을 초래하기도 합니다. 더위가 잦은 여름철에는 다음 사항을 숙지하여 피해를 사전에 예방할 수 있도록 미리 준비합니다.</p>
                     </div>
                     <div className={styles.infoBox}>
@@ -64,7 +65,8 @@ function Service2() {
             content:(
                 <div>
                     <div className={styles.prepHeader}>
-                        <h5>폭염발생 시 행동요령</h5>
+                        <h5>폭염발생 시 <br/> 
+                        행동요령</h5>
                         <p>TV, 라디오, 인터넷 등에서 폭염이 예보된 때에는 최대한 야외활동을 자제하고 주변의 독거노인 등 건강이 염려되는 분들의 안부를 살펴봅니다.</p>
                     </div>
                     <div className={styles.infoBoxContainer}>

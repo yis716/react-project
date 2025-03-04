@@ -42,7 +42,7 @@ function Section3() {
         <section className='section3'>
             <div className='secInner'>
                 <div className='innerTxt'>
-                    <div className='secTitle'>
+                    <div className='secTitle' data-aos="zoom-in-right" data-aos-duration="700">
                         <h3 className='hidden'>주요업무</h3>
                         <span>대한민국 기상청이 제공하는</span>
                         <p>기상·기후서비스</p>

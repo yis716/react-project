@@ -161,13 +161,13 @@ function Notice() {
                 width={chartWidth}
                 height={400}
               />
+              </div>
               <div className="serch_box">
                 <form>
                   <input id="title" type="text" placeholder="ex) seoul,서울,경기도,강원도,부산,독도,제주도" value={searchtext} onChange={changeHandler} onKeyDown={(e)=>enterHandler(e)} />
                   <button id="btn" type="button" onClick={(e)=>searchHandler(searchtext,e)}><FaSearch /></button>
                   <button className="btn_all" type="button" onClick={allHandler}>All</button>
                 </form>  
-              </div>
               </div>
        
             {

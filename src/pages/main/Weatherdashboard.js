@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import '../../css/Weatherdashboard.css'
 import SaturdayIcon from '../../images/main/sec1-weather.jpg'
 
+
 const WeatherCard = ({ day, icon, minTemp, maxTemp, bgColor }) => (
     <div className={`weather-card ${bgColor}`}>
         <h3 className="day">{day}</h3>
@@ -21,14 +22,14 @@ const WeatherCard = ({ day, icon, minTemp, maxTemp, bgColor }) => (
     // const lat = 37.715133; // 서울 위도
     // const lon = 127.0016985; // 서울 경도
 
-    useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
-            .then((response) => response.json())
-            .then((data) => {
-                const dailyData = data.list.filter((reading, index) => index % 8 === 0);
-                setWeatherData(dailyData);
-            });
-    }, []);
+useEffect(() => {
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
+        .then((response) => response.json())
+        .then((data) => {
+            const dailyData = data.list.filter((reading, index) => index % 8 === 0);
+            setWeatherData(dailyData);
+        });
+}, []);
 
     // useEffect(() => {
     //     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=metric&appid=${apiKey}`)
@@ -44,7 +45,7 @@ const WeatherCard = ({ day, icon, minTemp, maxTemp, bgColor }) => (
     // }, []);
 
     return (
-        <div className="weather-dashboard">
+        <div className="weather-dashboard" data-aos="flip-up" data-aos-duration="1000">
             {weatherData.map((dayData, index) => (
                 <WeatherCard
                     key={index}

@@ -21,7 +21,7 @@ const navpass = [
     component:Position
    },
    {
-    path:'/Data',
+    path:'/Data/*',
     component:Data
    },
    {

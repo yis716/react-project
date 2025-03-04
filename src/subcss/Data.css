@@ -29,17 +29,15 @@
 
 
 /* data 공통 영역 */
-    .data .data_title{margin: 50px 0;}
+    .data .data_title{margin: 70px 0 20px ;}
     .data .data_title h4{font-size: 1.7rem; margin-bottom: 10px;}
-    .data .data_title p{font-size: 1.1rem; margin-bottom: 40px;}
+    .data .data_title p{font-size: 1.1rem; margin-bottom: 40px; text-align: justify;}
 
 
     .data .data-table-container {
         overflow-y: auto;
-        overflow-x: auto;
         border: 1px solid #ddd;
         margin-bottom: 150px;
-        /* max-width: 100%; */
     }
     .data table{
         width: 100%;
@@ -56,17 +54,22 @@
     }
     
     .data table th{
-        padding: 10px 0;
+        padding: 10px 8px;
         color: #57B7F2;
         font-weight: 700;
+        white-space: nowrap;
+    }
+    .data tr:nth-of-type(1){
+        border-bottom: 1px solid #ccc;
     }
     /* .data tbody tr:nth-child(odd) {
         background: #f2f2f2;
     } */
-    tr:nth-child(even) {
+    .data tr:nth-child(even) {
         background-color: #f9f9f9;
       }
-    .data td {
+    .data table td {
+        white-space: nowrap;
         padding: 8px;
         border-bottom: 1px solid #ddd;
         text-align: center;
@@ -86,13 +89,55 @@
     
 /* data3 영역 */
     .data3 .data-table-container {
-        max-height: 700px; 
+        max-height: 700px;
+        /* max-width: 1000px;  */
         margin-bottom: 10px;
+        overflow-x: scroll;
+
     }
-    .data3 td:nth-child(3),td:nth-child(4){
+    .data3 td:nth-child(3), .data3 td:nth-child(4){
         text-align: left;
     }
+    .data3>span{
+        display: block;
+        font-size: 1.3rem;
+        text-align: center;
+        margin: 50px 0;
+        background: #f9f9f9;
+        /* height: 200px; */
+        align-self: center;
+        padding: 50px 0;
+    }
+
     .data3>p{
-        text-align: right;
+        margin-bottom: 150px;
         color: #999;
-        margin-bottom: 150px;}
+        }
+
+
+    .data3 .serch_box form {
+        width: 50%;
+        display: flex;
+        gap: 20px;
+        padding: 10px 0;
+        justify-content: right;
+        align-items: center;
+        border-bottom: 1px solid #999;
+        margin: 0 auto;}
+
+    .data3 .serch_box form button{color: #999; transition: all .3s;}
+    .data3 .serch_box form button:hover{color: #666;}
+
+    .data3 .serch_box label{font-size: 18px;}
+
+    .data3 .serch_box input {
+        width: 80%;
+        font-size: 1.1rem;
+        padding: 5px 10px;
+        border: 0;
+        outline: none;
+        text-align: center;
+        }
+
+    .data3 .serch_box button{ padding: 5px;font-size: 1.5rem; background-color:transparent; border: 0; color:#333;cursor: pointer;}
+    /* .data3 .serch_box .btn_all{color: #333; background-color:transparent;} */

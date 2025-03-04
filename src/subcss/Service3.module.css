@@ -71,7 +71,6 @@
  
  .prepHeader h5{
    width: 29%;
-    background: #666;
     color: black;
     font-size: 1.2rem;
     font-weight: bold;
@@ -146,44 +145,53 @@
   text-align: center; padding: 30px;}
 
 
-  @media (max-width: 768px) {
-    .service1Container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .subTabMenu {
-      width: 100%;
-      flex-direction: row;
-      justify-content: space-around;
-      border-right: none;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-    }
-  
-    .subTabMenu button {
-      font-size: 1rem;
-      padding: 8px 12px;
-    }
-  
-    .tabContent {
-      width: 100%;
-    }
+/* ============================= */
+/* 📌 1280px 이하 반응형 스타일 */
+/* ============================= */
 
-    .imgContainer {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-  }
+@media (max-width:1280px) {
+  .tabContent p p {margin-top: 0;}
+  .infoBox{margin-left: 3%;}
+  /* .infoBox:nth-child(4) {border: none;} */
 
-  .imgContainer img {
-      width: 45%; /* 2개씩 배치 */
-  }
+  /* .infoDescription{width: 50px;}
+  .infoBoxContainer{margin-top: 0;}
+  .small > div {width: 30%;}
 
-  .imgContainer:nth-of-type(2) img {
-      width: 45%;
-  }
+  .infoTable td{ padding: 20px;}
+ .infoTable td:nth-child(1){  width: 15%; padding: 0px;} */
 }
+
+@media (max-width:1024px){
+  .prepHeader h5 {background: none; width: 35%;}
+}
+
+  @media (max-width: 768px) {
+    
+  .service2Container{clear: both;
+  }
+  
+  /* 탭 메뉴 */
+  .subTabMenu{clear: both; width: 100%;
+    flex-direction:row; margin-bottom: 30px;
+    border-bottom: 2px solid #ddd; box-sizing: border-box;
+    border-right: none; max-width: none;
+  }
+  
+  .tabContent{clear: both; width: 100%;}
+  
+  .prepHeader{margin: 0;}
+  .prepHeader h5 {background: none; width: 30%;}
+  .small > div{background: none; padding: 0; border-bottom: 2px solid #ddd;
+    border-radius: 0%; }
+  
+}
+
+@media (max-width: 640px) {
+  .prepHeader h5{width: 45%;}
+
+}
+
 
 
 @media (max-width: 480px) {

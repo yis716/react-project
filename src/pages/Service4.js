@@ -223,11 +223,12 @@ function Service4() {
         ),
       },
       {
-        name: '폭우 예보 시',
+        name: '폭우 예보',
         content: (
           <div>
             <div className={styles.prepHeader}>
-              <h5>호우특보 예보시 행동요령</h5>
+              <h5>호우특보 시 <br/>
+              행동요령</h5>
               <p>TV, 라디오, 인터넷 등에서 호우특보가 예보된 때에는 거주 지역에 영향을 주는 시기를 미리 파악하고, 호우 발생 전에 필요한 조치를 합니다.</p>
             </div>
             <div className={styles.infoBox}>
@@ -237,7 +238,7 @@ function Service4() {
         ),
       },
       {
-        name: '호우 특보 중',
+        name: '호우 특보',
         content: (
           <div className={styles.infoBox}>
             <Accordion items={warningItems} />
