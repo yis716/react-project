@@ -60,17 +60,17 @@ useEffect(() => {
             {/* ✅ 토요일 추가 (고정된 값) */}
             <WeatherCard
                 day="토요일"
-                icon={null}
+                icon={"03d"}
                 minTemp={3}
                 maxTemp={7}
                 bgColor="gray"
-                customIcon={SaturdayIcon}
+                // customIcon={SaturdayIcon}
             />
 
             {/* ✅ 일요일 추가 (고정된 값) */}
             <WeatherCard
                 day="일요일"
-                icon={null}
+                icon={"01d"}
                 minTemp={1}
                 maxTemp={6}
                 bgColor="red"
